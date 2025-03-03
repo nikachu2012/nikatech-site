@@ -1,12 +1,13 @@
 import PLink from "@/components/PLink";
 import Section from "@/components/Section";
 import Year from "@/components/Year";
+import GetDateISO8601String from "@/utils/GetDateISO8601String";
 
 export default function Home() {
   return (
     <div className="w-full md:w-[800px] bg-white m-auto p-2 px-4 md:px-6 min-h-[100svh] border-t-4 border-t-[#008db7] shadow">
       <header className="pb-2">
-        <span className="font-mono text-sm text-neutral-400 leading-none">Last updated: 2025-03-03T09:58:20+09:00</span>
+        <span className="font-mono text-sm text-neutral-400 leading-none">Last updated: {GetDateISO8601String(new Date(Date.now()))}</span>
         <h1 className="font-bold text-4xl mt-3">nikatech</h1>
 
         <p className="mt-1">
