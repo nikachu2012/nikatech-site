@@ -2,6 +2,12 @@ import Link from "next/link";
 import Section from "@/components/Section";
 import Year from "@/components/Year";
 import GetDateISO8601String from "@/utils/GetDateISO8601String";
+import Image from "next/image";
+
+import visaLogo from "./visa.svg";
+import masterLogo from "./master.svg";
+import unionpayLogo from "./unionpay.svg";
+import contactlessLogo from "./contactless.svg";
 
 export default function Home() {
   return (
@@ -42,6 +48,35 @@ export default function Home() {
           <p>
             最近はにわかですが決済系にも興味があります。<br />
           </p>
+        </Section>
+
+        <Section title={"決済方法一覧"} id="payment">
+          イベントによって利用できる決済方法が異なることがあります。詳細についてはイベントの宣伝ツイート等をご覧ください。
+
+          <h3 className="font-bold">現金</h3>
+          できるだけおつりの出ないようにお願いいたします。
+          
+          <h3 className="font-bold mt-2">クレジット・デビット・プリペイド</h3>
+          <div className="flex justify-center">
+            <Image src={visaLogo} alt={"Visa"} width={100}/>
+            <Image src={masterLogo} alt={"Mastercard"} width={100} className="ml-2"/>
+            <Image src={unionpayLogo} alt={"UnionPay"} width={100} className="ml-0"/>
+          </div>
+          <div className="flex items-center gap-2 justify-center">
+            <Image src={contactlessLogo} alt={""} width={15} />
+            <div>コンタクトレス決済がご利用いただけます(UnionPayを除く)。</div>
+          </div>
+          <div className="bg-red-200 border border-red-400 p-2 rounded">
+            金属カードを使用したことによる決済端末の故障が多く発生しています。金属カードをご利用になる場合はコンタクトレス決済でお願いします。
+          </div>
+          <div className="bg-yellow-200 border border-yellow-400 p-2 rounded">
+            暗証番号スキップ（PINバイパス）は2025年3月にて原則廃止となります。{/* <Link href={"https://www.jcca-office.gr.jp/dealer/handling/ichandling/"} target="_blank">関連リンク</Link> */}<br />
+            本人確認には暗証番号をご利用ください（一部暗証番号の入力が必要ない場合もあります）。
+          </div>
+
+          <h3 className="font-bold mt-2">QRコード決済</h3>
+          未定
+
         </Section>
 
         <Section title={"参加予定イベント"} id="event">
