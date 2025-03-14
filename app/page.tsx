@@ -1,4 +1,4 @@
-import PLink from "@/components/PLink";
+import Link from "next/link";
 import Section from "@/components/Section";
 import Year from "@/components/Year";
 import GetDateISO8601String from "@/utils/GetDateISO8601String";
@@ -22,10 +22,10 @@ export default function Home() {
 
         <Section title={"目次的な何か"} id="faketoc">
           <ul className="list-disc list-inside ml-3">
-            <li>参加予定のイベントは<PLink href={"#event"} >こちら</PLink></li>
-            <li>頒布した品の一覧は<PLink href={"#item"} >こちら</PLink></li>
-            <li>SNSや販売ページは<PLink href={"#sns"} >こちら</PLink></li>
-            <li>頒布品に対する文句、ご意見は<PLink href={"#form"} >こちら</PLink></li>
+            <li>参加予定のイベントは<Link href={"#event"} >こちら</Link></li>
+            <li>頒布した品の一覧は<Link href={"#item"} >こちら</Link></li>
+            <li>SNSや販売ページは<Link href={"#sns"} >こちら</Link></li>
+            <li>頒布品に対する文句、ご意見は<Link href={"#form"} >こちら</Link></li>
           </ul>
         </Section>
 
@@ -53,7 +53,7 @@ export default function Home() {
             </div>
 
             <div className="flex flex-wrap mt-1">
-              <PLink href={"https://techbookfest.org/event/tbf18"} target="_blank" className="ml-0">イベントの公式ページ</PLink>
+              <Link href={"https://techbookfest.org/event/tbf18"} target="_blank">イベントの公式ページ</Link>
             </div>
           </div>
 
@@ -94,8 +94,8 @@ export default function Home() {
 
         <Section title={"SNS"} id="sns">
           <div>
-            <div>サークル代表のTwitter(新X)は<PLink href={"https://twitter.com/nikachu2012"} target="_blank">こちら</PLink></div>
-            <div>サークル代表のポートフォリオは<PLink href={"https://portfolio.nikachu.net"} target="_blank">こちら</PLink></div>
+            <div>サークル代表のTwitter(新X)は<Link href={"https://twitter.com/nikachu2012"} target="_blank">こちら</Link></div>
+            <div>サークル代表のポートフォリオは<Link href={"https://portfolio.nikachu.net"} target="_blank">こちら</Link></div>
           </div>
         </Section>
 
@@ -106,12 +106,12 @@ export default function Home() {
           </p>
 
           <p>
-            暗号化が必要な場合は、<PLink href={"https://portfolio.nikachu.net/publickey"} target="_blank">OpenPGP公開鍵</PLink>を利用して暗号化してください。
+            暗号化が必要な場合は、<Link href={"https://portfolio.nikachu.net/publickey"} target="_blank">OpenPGP公開鍵</Link>を利用して暗号化してください。
           </p>
 
           <p>Googleフォームを使用しています。送信にはGoogleアカウントが必要です。</p>
 
-          <PLink href="https://forms.gle/7ixA4yZEv6ToTEU76" target="_blank" className="ml-0">ご意見フォーム</PLink>
+          <Link href="https://forms.gle/7ixA4yZEv6ToTEU76" target="_blank" className="ml-0">ご意見フォーム</Link>
         </Section>
 
       </main>
