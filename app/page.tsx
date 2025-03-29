@@ -41,7 +41,7 @@ export default function Home() {
       <Section title={"参加予定イベント"} id="event">
         <div className="border border-neutral-400 p-2">
           <div className="font-bold text-xl">技術書典18 オフライン会場</div>
-            <div className="">2025-06-01 (日) / 池袋・サンシャインシティ 展示ホールD / 配置場所未定</div>
+          <div className="">2025-06-01 (日) / 池袋・サンシャインシティ 展示ホールD / <span className="text-red-500">う17</span></div>
 
           <div className="flex flex-wrap mt-1">
             <Link href={"https://techbookfest.org/event/tbf18"} target="_blank">イベントの公式ページ</Link>
