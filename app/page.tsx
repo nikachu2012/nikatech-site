@@ -79,8 +79,8 @@ export default function Home() {
       <Section title={"頒布品"} id="item">
         <h3 className="font-bold">販売中／予定</h3>
         <ul className="list-disc list-outside ml-6">
-          <li><Link href={"#"}>スマートリモコン自作ガイド（未完成）</Link></li>
-          <li><Link href={"#"}>高級言語は甘え Part1 AVRアセンブラ （未完成）</Link></li>
+          <li><Link href={"item/smartremote_guide"}>スマートリモコン自作ガイド（未完成）</Link></li>
+          <li><Link href={"item/avrasm"}>高級言語は甘え Part1 AVRアセンブラ （未完成）</Link></li>
         </ul>
 
         <h3 className="font-bold">制作検討中</h3>
@@ -115,6 +115,5 @@ export default function Home() {
       </Section>
 
     </main>
-
   );
 }
