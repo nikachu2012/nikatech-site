@@ -1,7 +1,13 @@
+import { Metadata } from "next";
+
 import Section from "@/components/Section";
 import Image from "next/image";
 
 import creditAcceptance from "../credit_acceptance.svg";
+
+export const metadata: Metadata = {
+  title: '標準決済方法一覧',
+}
 
 export default function Home() {
   return (

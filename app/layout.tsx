@@ -9,7 +9,10 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "nikatech",
+  title: {
+    template: "%s - nikatech",
+    default: "nikatech"
+  },
   description: "同人サークル「nikatech」の公式サイトです。技術系でいろいろやっています。",
 };
 

@@ -1,8 +1,14 @@
+import { Metadata } from "next";
+
 import Section from "@/components/Section";
 import Image from "next/image";
 
 import thumbnail from "./thumb.png";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: 'スマートリモコン自作ガイド',
+}
 
 export default function Home() {
   return (
