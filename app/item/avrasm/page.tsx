@@ -37,7 +37,7 @@ export default function Home() {
               </tr>
               <tr>
                 <td>ISDN（Cコード）</td>
-                <td className="font-mono">ISDN278-4-874194-01-7 (C3455)</td>
+                <td className="font-mono">ISDN278-4-874195-01-4 (C3055)</td>
               </tr>
               <tr>
                 <td>サイズ</td>
@@ -45,7 +45,7 @@ export default function Home() {
               </tr>
               <tr>
                 <td>ページ数</td>
-                <td>44ページ（表紙別）</td>
+                <td>50ページ（表1-表4含む）</td>
               </tr>
               <tr>
                 <td>頒布価格</td>
