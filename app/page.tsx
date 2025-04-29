@@ -77,10 +77,20 @@ export default function Home() {
 
 
       <Section title={"頒布品"} id="item">
-        <h3 className="font-bold">販売中／予定</h3>
+        <h3 className="font-bold">新刊</h3>
         <ul className="list-disc list-outside ml-6">
-          <li><Link href={"item/smartremote_guide"}>スマートリモコン自作ガイド（未完成）</Link></li>
-          <li><Link href={"item/avrasm"}>高級言語は甘え Part1 AVRアセンブラ （未完成）</Link></li>
+          <li><Link href={"item/smartremote_guide"}>スマートリモコン自作ガイド（ほぼ完成！！！！！）</Link></li>
+          <li>
+            <Link href={"item/avrasm"}>Arduinoで学ぶアセンブリ （ほぼ完成！！！！！）</Link><br />
+            サークル代表へ　アセンブラじゃなくてアセンブ<b>リ</b>ですご注意を
+          </li>
+        </ul>
+        
+        <h3 className="font-bold">既刊</h3>
+        <ul className="list-disc list-outside ml-6">
+          既刊なんかねーよ　うるせえよ　黙れよ
+          {/* <li><Link href={"item/smartremote_guide"}>スマートリモコン自作ガイド（未完成）</Link></li> */}
+          {/* <li><Link href={"item/avrasm"}>高級言語は甘え Part1 AVRアセンブラ （未完成）</Link></li> */}
         </ul>
 
         <h3 className="font-bold">制作検討中</h3>
