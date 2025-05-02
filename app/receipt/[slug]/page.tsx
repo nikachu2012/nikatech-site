@@ -10,6 +10,7 @@ import GetDateISO8601String from "@/utils/GetDateISO8601String";
 
 import { getRequestContext } from "@cloudflare/next-on-pages";
 
+export const runtime = "edge";
 
 export const metadata: Metadata = {
     title: '電子レシート',
