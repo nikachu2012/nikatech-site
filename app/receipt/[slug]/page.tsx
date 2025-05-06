@@ -18,6 +18,10 @@ type Receipt = {
     sum: number
     id: string
 
+    store: string
+    event: string
+    cashier: string
+
     item: {
         id: string
         count: number
@@ -116,8 +120,8 @@ export default async function Home({ params }: {
 
                 <Section title={"電子レシート"} id="payment">
                     <div className="mt-1">
-                        <span className="font-bold text-2xl">nikatech</span><br />
-                        <span>技術書典18-う17</span>
+                        <span className="font-bold text-2xl">{receipt.store}</span><br />
+                        <span>{receipt.event}</span>
                     </div>
 
                     <div>
@@ -126,7 +130,7 @@ export default async function Home({ params }: {
 
                     <div>
                         <span>{GetDateISO8601String(new Date(receipt.date * 1000))}</span><br />
-                        <span>担当: nikachu</span>
+                        <span>担当: {receipt.cashier}</span>
                     </div>
 
                     <table className="w-full border-collapse">
