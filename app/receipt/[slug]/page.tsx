@@ -133,7 +133,7 @@ export default async function Home({ params }: {
                         <span>担当: {receipt.cashier}</span>
                     </div>
 
-                    <table className="w-full border-collapse">
+                    <table className="border-collapse">
                         <tbody>
                             {receipt.item.map((item, index) => (
                                 <tr key={index} className="border-b border-gray-200">
@@ -149,12 +149,12 @@ export default async function Home({ params }: {
                                     <td className="p-2 text-right">
                                         JPY {(item.count * item.price).toLocaleString()}
                                     </td>
-                                    <td className="p-2">
+                                    <td className="p-2 w-0">
                                         <Link
                                             href={`https://nikatech.nikachu.net/download/${item.id}?key=${slug.toLowerCase()}`}
                                             target="_blank"
                                         >
-                                            PDFダウンロード
+                                            PDF
                                         </Link>
                                     </td>
                                 </tr>
@@ -163,7 +163,7 @@ export default async function Home({ params }: {
                     </table>
                     <br />
 
-                    <table className="w-full border-collapse">
+                    <table className="border-collapse">
                         <tbody>
                             <tr className="border-b border-gray-200">
                                 <td className="p-2">合計</td>
@@ -176,7 +176,7 @@ export default async function Home({ params }: {
                         </tbody>
                     </table>
 
-                    <table className="w-full border-collapse">
+                    <table className="border-collapse">
                         <tbody>
                             <tr className="border-b border-gray-200">
                                 <td className="p-2">支払い {paymentToReadableString(receipt.payment)}</td>
@@ -191,15 +191,13 @@ export default async function Home({ params }: {
 
                 </Section>
 
-                <pre className="font-mono text-sm text-neutral-400 ">
-                    <code>
-                        Tech info<br />
-                        Process date: {new Date().toString()}<br />
-                        Requested DB key: {slug.toUpperCase()}<br />
-                        UUID validation: {uuidValidate(slug) ? "true" : " false"}<br />
-                        UUID version: {uuidVersion(slug)}
-                    </code>
-                </pre>
+                <span className="font-mono text-sm text-neutral-400">
+                    Tech info<br />
+                    Process date: {new Date().toString()}<br />
+                    Requested DB key: {slug.toUpperCase()}<br />
+                    UUID validation: {uuidValidate(slug) ? "true" : " false"}<br />
+                    UUID version: {uuidVersion(slug)}
+                </span>
             </main>
 
         );
