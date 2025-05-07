@@ -146,7 +146,7 @@ export default async function Home({ params }: {
 
                 <Section title={"ダウンロード可能なアセット"} id="assets">
                     {receipt.item.map(async (item, itemIndex) => {
-                        const r2list = await context.env.NIKATECH_ASSETS.list({ "prefix": item.id.trim() })
+                        const r2list = await context.env.NIKATECH_ASSETS.list({ "prefix": item.id.trim() + ":" })
                         
                         return <div key={itemIndex}>
                             <div className="font-bold">{item.name} ({item.id})</div>
