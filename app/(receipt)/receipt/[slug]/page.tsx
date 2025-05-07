@@ -68,8 +68,11 @@ export default async function Home({ params }: {
 
         return (
             <main className="flex flex-col flex-wrap gap-6 py-4">
-
                 <Section title={"電子レシート"} id="payment">
+                    <div>
+                        電子版等のダウンロードは<a href="#assets">こちら</a>から
+                    </div>
+
                     <div className="mt-1">
                         <span className="font-bold text-2xl">{receipt.store}</span><br />
                         <span>{receipt.event}</span>
@@ -98,7 +101,7 @@ export default async function Home({ params }: {
                                     </div>
                                     <div className="flex justify-between">
                                         <span>
-                                            @{item.price.toLocaleString()} x {item.count}
+                                            @{item.price.toLocaleString()}x{item.count}
                                         </span>
                                         <span>
                                             <span>JPY {(item.count * item.price).toLocaleString()}</span>
@@ -136,6 +139,28 @@ export default async function Home({ params }: {
                         </tbody>
                     </table>
 
+                </Section>
+
+                <Section title={"ダウンロード可能なアセット"} id="assets">
+                    {receipt.item.map(async (item, itemIndex) => {
+                        const r2list = await context.env.NIKATECH_ASSETS.list({ "prefix": item.id.trim() })
+                        
+                        return <div key={itemIndex}>
+                            <div className="font-bold">{item.name} ({item.id})</div>
+                            <ul className="list-disc ml-5 font-mono text-sm">
+                                {r2list.objects.map((obj, keyIndex) => {
+                                    return <li key={keyIndex}>
+                                        <a href={`/download/${encodeURIComponent(obj.key)}?receipt=${receipt.id.toLowerCase()}`}>
+                                            {obj.key.split(":")[1]}
+                                        </a><br />
+                                        <span className="font-mono text-xs">
+                                            Size: {obj.size} Bytes ({(obj.size / 1024 / 1024).toFixed(2)} MiB)
+                                        </span><br />
+                                    </li>
+                                })}
+                            </ul>
+                        </div>
+                    })}
                 </Section>
 
                 <span className="font-mono text-sm text-neutral-400">

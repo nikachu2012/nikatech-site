@@ -36,5 +36,10 @@
             "bucket_name": "nikatech-cache",
             "preview_bucket_name": "nikatech-cache-preview"
         },
+        {
+            "binding": "NIKATECH_ASSETS",
+            "bucket_name": "nikatech-assets",
+            "preview_bucket_name": "nikatech-assets"
+        },
     ],
 }
