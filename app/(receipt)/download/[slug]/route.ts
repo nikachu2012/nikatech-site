@@ -65,6 +65,8 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
     const headers = new Headers({
         "Content-Type": "binary/octet-stream",
         "Content-Disposition": `attachment; filename=${fileName}`,
+        "Content-Length": `${data.size}`,
+        "ETag": data.httpEtag
     });
     return new NextResponse(fileContent, { headers });
 }
