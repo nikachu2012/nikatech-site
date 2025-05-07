@@ -139,6 +139,9 @@ export default async function Home({ params }: {
                         </tbody>
                     </table>
 
+                    <div className="bg-yellow-200 border border-yellow-400 p-2 rounded">
+                        電子レシートシステムは予告なく停止する可能性があります。あらかじめご了承ください。
+                    </div>
                 </Section>
 
                 <Section title={"ダウンロード可能なアセット"} id="assets">
