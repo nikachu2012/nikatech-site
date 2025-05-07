@@ -1,4 +1,5 @@
 import { Receipt } from "@/utils/EReceiptUtils";
+import { uuidValidateV7 } from "@/utils/uuidUtils";
 import { getCloudflareContext } from "@opennextjs/cloudflare";
 import { type NextRequest, NextResponse } from "next/server";
 
@@ -18,10 +19,10 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
     // レシートIDのチェック
     const searchParams = request.nextUrl.searchParams;
     const receiptId = searchParams.get("receipt");
-    if (!receiptId) {
+    if (!receiptId || !uuidValidateV7(receiptId)) {
         const response = {
             status: false,
-            reason: "Query parameter receiptId is not exist"
+            reason: "Query parameter receiptId is invalid"
         }
         return new NextResponse(JSON.stringify(response), { status: 404, headers: { "Content-Type": "application/json" } });
     }
