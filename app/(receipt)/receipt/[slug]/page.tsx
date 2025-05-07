@@ -70,7 +70,7 @@ export default async function Home({ params }: {
             <main className="flex flex-col flex-wrap gap-6 py-4">
                 <Section title={"電子レシート"} id="payment">
                     <div>
-                        電子版等のダウンロードは<a href="#assets">こちら</a>から
+                        電子版などファイルのダウンロードは<a href="#assets">こちら</a>から
                     </div>
 
                     <div className="mt-1">
