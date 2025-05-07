@@ -136,28 +136,24 @@ export default async function Home({ params }: {
                     <table className="border-collapse">
                         <tbody>
                             {receipt.item.map((item, index) => (
-                                <tr key={index} className="border-b border-gray-200">
-                                    <td className="p-2">
+                                <div key={index} className="border-b border-gray-200 p-2">
+                                    <div>
                                         <Link
                                             href={`https://nikatech.nikachu.net/item/${item.id}`}
                                             target="_blank"
                                         >
                                             {item.name}
                                         </Link>
-                                    </td>
-                                    <td className="p-2 text-right">@{item.price.toLocaleString()} x {item.count}</td>
-                                    <td className="p-2 text-right">
-                                        JPY {(item.count * item.price).toLocaleString()}
-                                    </td>
-                                    <td className="p-2 w-0">
-                                        <Link
-                                            href={`https://nikatech.nikachu.net/download/${item.id}?key=${slug.toLowerCase()}`}
-                                            target="_blank"
-                                        >
-                                            PDF
-                                        </Link>
-                                    </td>
-                                </tr>
+                                    </div>
+                                    <div className="flex justify-between">
+                                        <span>
+                                            @{item.price.toLocaleString()} x {item.count}
+                                        </span>
+                                        <span>
+                                            <span>JPY {(item.count * item.price).toLocaleString()}</span>
+                                        </span>
+                                    </div>
+                                </div>
                             ))}
                         </tbody>
                     </table>
