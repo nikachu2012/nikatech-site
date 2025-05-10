@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /receipt/
+Disallow: /download/
