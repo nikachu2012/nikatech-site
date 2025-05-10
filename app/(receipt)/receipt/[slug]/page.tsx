@@ -65,6 +65,8 @@ export default async function Home({ params }: {
     }
     else {
         const receipt = JSON.parse(receiptStr) as Receipt
+        const header = receipt.header.split("\n")
+        const footer = receipt.footer.split("\n")
 
         return (
             <main className="flex flex-col flex-wrap gap-6 py-4">
@@ -79,7 +81,7 @@ export default async function Home({ params }: {
                     </div>
 
                     <div>
-                        <span>お買い上げありがとうございます。</span>
+                        <span>{header.map((e) => <>{e}<br /></>)}</span>
                     </div>
 
                     <div>
@@ -139,6 +141,10 @@ export default async function Home({ params }: {
                         </tbody>
                     </table>
 
+                    <div>
+                        <span>{footer.map((e) => <>{e}<br /></>)}</span>
+                    </div>
+
                     <div className="bg-yellow-200 border border-yellow-400 p-2 rounded">
                         電子レシートシステムは予告なく停止する可能性があります。あらかじめご了承ください。
                     </div>
@@ -147,7 +153,7 @@ export default async function Home({ params }: {
                 <Section title={"ダウンロード可能なアセット"} id="assets">
                     {receipt.item.map(async (item, itemIndex) => {
                         const r2list = await context.env.NIKATECH_ASSETS.list({ "prefix": item.id.trim() + ":" })
-                        
+
                         return <div key={itemIndex}>
                             <div className="font-bold">{item.name} ({item.id})</div>
                             <ul className="list-disc ml-5 font-mono text-sm">
