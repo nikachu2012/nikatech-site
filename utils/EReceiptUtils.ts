@@ -1,8 +1,8 @@
 export type Receipt = {
-    type: "PURCHASE" | "CANCEL"
-    sum: number
-    id: string
+    id: string // UUIDv7 compatible string
+    date: number // UNIX seconds
 
+    type: "PURCHASE" | "CANCEL"
     store: string
     event: string
     cashier: string
@@ -15,9 +15,13 @@ export type Receipt = {
         price: number
     }[]
 
-    date: number
-    payment: string,
+    sum: number
     paid: number
+    payment: string
+
+    receiptType: "NOTISSUE" | "RECEIPT" | "RYOSYUSYO"
+    header: string
+    footer: string
 }
 
 export function paymentToReadableString(t: string): string {
