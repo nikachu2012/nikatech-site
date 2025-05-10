@@ -145,6 +145,11 @@ export default async function Home({ params }: {
                         <span>{footer.map((e) => <>{e}<br /></>)}</span>
                     </div>
 
+                    {receipt.receiptType != "NOTISSUE" ?
+                        <div className="bg-red-200 border border-red-400 p-2 rounded">
+                            この電子レシートの表示内容を正式な領収書として使用することはできません。経費計上に使用する場合は、紙のレシートまたは紙の領収書をご利用ください。
+                        </div> : <></>}
+
                     <div className="bg-yellow-200 border border-yellow-400 p-2 rounded">
                         電子レシートシステムは予告なく停止する可能性があります。あらかじめご了承ください。
                     </div>
