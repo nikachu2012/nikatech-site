@@ -57,7 +57,7 @@ export default function Home() {
         </div>
 
         <div>
-          <Link href={"https://techbookfest.org/organization/KdLZ1mQYzBTzyyz68x2UX"} target="_blank">
+          <Link href={"https://techbookfest.org/product/5Mnfueeg0GCT4mYxc6ifk9"} target="_blank">
             技術書典の販売ページはこちら
           </Link><br />
         </div>
