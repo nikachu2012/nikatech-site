@@ -1,18 +1,22 @@
 import Link from "next/link";
 import Section from "@/components/Section";
+import Image from "next/image";
+import hero from "./hero.png"
 
 export default function Home() {
   return (
-    <main className="flex flex-col flex-wrap gap-6 py-4">
+    <main className="flex flex-col flex-wrap gap-6">
 
-      <Section title={"目次的な何か"} id="faketoc">
-        <ul className="list-disc list-inside ml-3">
-          <li>参加予定のイベントは<Link href={"#event"} >こちら</Link></li>
-          <li>頒布した品の一覧は<Link href={"#item"} >こちら</Link></li>
-          <li>SNSや販売ページは<Link href={"#sns"} >こちら</Link></li>
-          <li>頒布品に対する文句、ご意見は<Link href={"#form"} >こちら</Link></li>
-        </ul>
-      </Section>
+      <div className="relative w-full h-[150px] lg:h-[300px] overflow-hidden table mt-4">
+        <Image src={hero} alt={"hero"} className="absolute object-cover object-center blur-xs w-full h-full inline-block" width={1200} height={300} />
+        <div className="absolute w-full h-full bg-black opacity-50"></div>
+        <div className="absolute text-white h-full flex justify-center flex-col mx-4 lg:mx-10 gap-1 lg:gap-3">
+          <h1 className="font-bold text-4xl lg:text-7xl">nikatech</h1>
+          <div className="text-sm md:text-base">
+            技術系でいろいろやってる個人サークルです。
+          </div>
+        </div>
+      </div>
 
       <Section title={"サークル紹介"} id="circle">
         <p>
