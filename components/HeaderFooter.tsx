@@ -17,8 +17,8 @@ const linkList: {
 
 export default function HeaderFooter({ children }: { children: ReactNode }) {
     return <>
-        <div className="w-full bg-neutral-100 border-b-4 border-b-accent sticky top-0 z-1919">
-            <div className="w-full lg:w-[1200px] h-[50px] m-auto flex items-center justify-between px-4">
+        <div className="w-full bg-neutral-100 border-b-4 border-b-accent sticky top-0 z-999999">
+            <div className="w-full lg:w-[1000px] h-[50px] m-auto flex items-center justify-between px-4">
                 <Link href={"/"} className="text-black! no-underline!">
                     <div>
                         <span className="font-mono font-bold">nikatech</span>
@@ -53,7 +53,7 @@ export default function HeaderFooter({ children }: { children: ReactNode }) {
 
             </div>
         </div>
-        <div className="w-full lg:w-[1200px] m-auto">
+        <div className="w-full lg:w-[1000px] m-auto">
 
             <div className="w-full bg-white m-auto px-4 pb-4 min-h-[100svh] shadow">
                 {children}
