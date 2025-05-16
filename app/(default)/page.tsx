@@ -80,57 +80,15 @@ export default function Home() {
               </tbody>
             </table>
           </div>
-
-          {/* <div className="border border-neutral-400 p-2">
-            <div className="font-bold text-xl">技術書典18 オフライン会場</div>
-            <div className="">2025-06-01 (日) / 審査中です</div>
-            <div>
-
-              <table className="border-collapse mt-1 table-auto">
-                <thead>
-                  <tr>
-                    <th className="border border-neutral-400 p-1 px-2">種別</th>
-                    <th className="border border-neutral-400 p-1 px-2">商品名</th>
-                    <th className="border border-neutral-400 p-1 px-2">値段</th>
-                  </tr>
-                </thead>
-
-                <tbody>
-                  <tr>
-                    <td className="border border-neutral-400 p-1 px-2">新刊</td>
-                    <td className="border border-neutral-400 p-1 px-2">ンゴシリーズ vol.1</td>
-                    <td className="border border-neutral-400 p-1 px-2">500 JPY</td>
-                  </tr>
-                </tbody>
-              </table>
-
-            </div>
-          </div> */}
         </Section>
 
 
-        <Section title={"頒布品"} id="item">
-          <h3 className="font-bold">新刊</h3>
+        <Section title={"新刊"} id="newitem">
           <ul className="list-disc list-outside ml-6">
             <li><Link href={"item/smartremote_guide"}>スマートリモコン自作ガイド（ほぼ完成！！！！！）</Link></li>
             <li>
               <Link href={"item/avrasm"}>Arduinoで学ぶアセンブリ （ほぼ完成！！！！！）</Link><br />
               サークル代表へ　アセンブラじゃなくてアセンブ<b>リ</b>ですご注意を
-            </li>
-          </ul>
-
-          <h3 className="font-bold">既刊</h3>
-          <ul className="list-disc list-outside ml-6">
-            既刊なんかねーよ　うるせえよ　黙れよ
-            {/* <li><Link href={"item/smartremote_guide"}>スマートリモコン自作ガイド（未完成）</Link></li> */}
-            {/* <li><Link href={"item/avrasm"}>高級言語は甘え Part1 AVRアセンブラ （未完成）</Link></li> */}
-          </ul>
-
-          <h3 className="font-bold">制作検討中</h3>
-          <ul className="list-disc list-outside ml-6">
-            <li>
-              <Link href={"#"}>PSPで学ぶMIPSアーキテクチャ（幻）</Link><br />
-              めっちゃデータつきのELF使われててよくわからん
             </li>
           </ul>
         </Section>
