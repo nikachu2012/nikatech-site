@@ -8,7 +8,7 @@ import Link from "next/link";
 import HeaderFooter from "@/components/HeaderFooter";
 
 export const metadata: Metadata = {
-  title: 'Arduinoで始めるアセンブラ',
+  title: 'Arduinoで始めるアセンブリ',
 }
 
 export default function Home() {
@@ -34,7 +34,7 @@ export default function Home() {
               <tbody className="[&_td]:border [&_td]:border-neutral-300 [&_td]:p-1 [&_td]:px-2">
                 <tr>
                   <td>名称</td>
-                  <td>Arduinoで始めるアセンブラ</td>
+                  <td>Arduinoで始めるアセンブリ</td>
                 </tr>
                 <tr>
                   <td>著者</td>
