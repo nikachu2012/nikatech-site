@@ -39,6 +39,7 @@ export default function HeaderFooter({ children }: { children: ReactNode }) {
 
 
                     <div id="sidebar" className="transition-transform duration-100 ease-in-out transform -translate-x-full box-border fixed left-0 top-0 p-6 w-full h-full lg:w-0 lg:h-0 bg-neutral-200 z-30 lg:hidden flex flex-col gap-2 overflow-hidden pt-[50px]">
+                        <Link href={"/"} className="font-bold no-underline! text-lg">トップ</Link>
                         {linkList.map((e, i) => (
                             <Link key={i} href={e.href} className="font-bold no-underline! text-lg">{e.title}</Link>
                         ))}
