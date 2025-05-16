@@ -3,6 +3,7 @@ import Section from "@/components/Section";
 import Image from "next/image";
 import hero from "./hero.png"
 import HeaderFooter from "@/components/HeaderFooter";
+import GetDateISO8601String from "@/utils/GetDateISO8601String";
 
 export default function Home() {
   return (
@@ -35,13 +36,15 @@ export default function Home() {
           </p>
         </Section>
 
-        <Section title={"決済方法一覧"} id="payment">
-          <p>
-            イベントによって利用できる決済方法が異なることがあります。詳細についてはイベントの宣伝ツイート等をご覧ください。
-          </p>
-          <p>
-            イベント共通の決済方法については<Link href={"payment"}>標準決済方法一覧</Link>をご覧ください。
-          </p>
+        <Section title={"お知らせ"} id="announcement">
+          <ul className="ml-6 list-disc">
+            <li>
+              <span className="font-mono text-neutral-">{GetDateISO8601String(new Date("2025-05-16T12:41:42.000+09:00"))}</span><br />
+              <div>
+                6/1(日) 技術書典18参加します！出展場所は<b>う17</b>です。皆様のお越しをお待ちしております。
+              </div>
+            </li>
+          </ul>
         </Section>
 
         <Section title={"参加予定イベント"} id="event">
