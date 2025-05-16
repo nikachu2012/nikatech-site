@@ -11,7 +11,7 @@ const linkList: {
         { title: "イベント", href: "/event" },
         { title: "お支払い", href: "/payment" },
         { title: "頒布品", href: "/item" },
-        { title: "お問い合わせ", href: "#form" },
+        { title: "お問い合わせ", href: "/contact" },
     ]
 
 
