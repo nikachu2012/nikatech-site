@@ -8,7 +8,7 @@ const linkList: {
     title: string
     href: string
 }[] = [
-        { title: "イベント", href: "#event" },
+        { title: "イベント", href: "/event" },
         { title: "お支払い", href: "/payment" },
         { title: "頒布品", href: "/item" },
         { title: "お問い合わせ", href: "#form" },
