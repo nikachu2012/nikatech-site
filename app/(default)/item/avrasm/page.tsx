@@ -21,11 +21,13 @@ export default function Home() {
         </div>
 
         <Section title={"概要"} id="detail">
-          <div>
-            AVRアセンブリをアセンブラでアセンブルした機械語を、一般のご家庭に必ずあるArduino UNO R3で実行することで「アセンブラを書けるようになったぞ」という達成感を得ます。
-            そのついでにCPUの中身への理解を深めようとする本です。
+          <p>
+            AVRアセンブリをアセンブラでアセンブルした機械語を、一般のご家庭に必ずあるArduino UNO R3で実行することで
+            「アセンブラを書けるようになったぞ」という達成感を得ます。そのついでにCPUの中身への理解を深めようとする本です。
+          </p>
+          <p>
             命令や用語の意味を理解しやすくするために、最初CPUの内部構造を簡単に解説しています。
-          </div>
+          </p>
 
           <div>
             <table className="border-collapse border border-neutral-300">
