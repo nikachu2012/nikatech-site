@@ -4,8 +4,8 @@ import Image from "next/image";
 import hero from "./hero.png"
 import HeaderFooter from "@/components/HeaderFooter";
 import GetDateISO8601String from "@/utils/GetDateISO8601String";
-import { NewReleaseList } from "./item/page";
-import { EventSchedule } from "./event/page";
+import { EventSchedule } from "./event/event";
+import { NewReleaseList } from "./item/newRelease";
 
 export default function Home() {
   return (
