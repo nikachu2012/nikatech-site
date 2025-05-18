@@ -13,6 +13,11 @@ import checkout1 from "./checkout1.jpeg"
 import airpay_credit from "./airpay_credit.png"
 import airpay_qr from "./airpay_qr.png"
 import GetDateISO8601String from "@/utils/GetDateISO8601String";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "POSの操作方法 - 売り子の方へ",
+}
 
 export default function Home() {
     return (

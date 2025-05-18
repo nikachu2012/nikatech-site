@@ -3,6 +3,11 @@ import Section from "@/components/Section";
 import HeaderFooter from "@/components/HeaderFooter";
 import Image from "next/image";
 import newRelease from "./new_release.png";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "頒布品",
+}
 
 export function NewReleaseList() {
     return <>

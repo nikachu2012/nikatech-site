@@ -2,6 +2,8 @@ import Section from "@/components/Section";
 import HeaderFooter from "@/components/HeaderFooter";
 import Image from "next/image";
 import GetDateISO8601String from "@/utils/GetDateISO8601String";
+import Link from "next/link";
+import { Metadata } from "next";
 
 import m010 from "./m010.jpg";
 import airpay_first from "./airpay_first.png";
@@ -17,7 +19,10 @@ import airpay_signverify from "./airpay_signverify.png"
 import credit_signpanel from "./credit_signpanel.jpg"
 import airpay_successful from "./airpay_successful.png"
 
-import Link from "next/link";
+export const metadata: Metadata = {
+    title: "Airペイの操作方法 - 売り子の方へ",
+}
+
 
 export default function Home() {
     return (

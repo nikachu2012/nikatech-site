@@ -1,6 +1,11 @@
 import Section from "@/components/Section";
 import HeaderFooter from "@/components/HeaderFooter";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "売り子の方へ",
+}
 
 export default function Home() {
     return (

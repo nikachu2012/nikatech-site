@@ -1,6 +1,11 @@
 import Link from "next/link";
 import Section from "@/components/Section";
 import HeaderFooter from "@/components/HeaderFooter";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "イベント",
+}
 
 export function EventSchedule() {
     return <>

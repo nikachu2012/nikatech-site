@@ -1,6 +1,11 @@
 import Link from "next/link";
 import Section from "@/components/Section";
 import HeaderFooter from "@/components/HeaderFooter";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "お問い合わせ",
+}
 
 export default function Home() {
     return (
