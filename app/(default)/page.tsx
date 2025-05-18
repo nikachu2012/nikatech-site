@@ -4,6 +4,7 @@ import Image from "next/image";
 import hero from "./hero.png"
 import HeaderFooter from "@/components/HeaderFooter";
 import GetDateISO8601String from "@/utils/GetDateISO8601String";
+import { NewReleaseList } from "./item/page";
 
 export default function Home() {
   return (
@@ -84,13 +85,7 @@ export default function Home() {
 
 
         <Section title={"新刊"} id="newitem">
-          <ul className="list-disc list-outside ml-6">
-            <li><Link href={"item/smartremote_guide"}>スマートリモコン自作ガイド（ほぼ完成！！！！！）</Link></li>
-            <li>
-              <Link href={"item/avrasm"}>Arduinoで学ぶアセンブリ （ほぼ完成！！！！！）</Link><br />
-              サークル代表へ　アセンブラじゃなくてアセンブ<b>リ</b>ですご注意を
-            </li>
-          </ul>
+          <NewReleaseList />
         </Section>
 
         <Section title={"SNS"} id="sns">
