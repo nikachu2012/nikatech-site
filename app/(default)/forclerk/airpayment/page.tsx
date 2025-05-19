@@ -18,6 +18,10 @@ import airpay_signinput from "./airpay_signinput.png"
 import airpay_signverify from "./airpay_signverify.png"
 import credit_signpanel from "./credit_signpanel.jpg"
 import airpay_successful from "./airpay_successful.png"
+import airpayqr_inputprice from "./airpayqr_inputprice.png"
+import airpayqr_readcode from "./airpayqr_readcode.png"
+import airpayqr_readcodecam from "./airpayqr_readcodecam.png"
+import airpayqr_successful from "./airpayqr_successful.png"
 
 export const metadata: Metadata = {
     title: "Airペイの操作方法 - 売り子の方へ",
@@ -218,10 +222,61 @@ export default function Home() {
                     </div>
                 </Section>
 
-                <Section title={"QRコード決済"} id="posDetail">
+                <Section title={"QRコード決済"} id="qrcode">
                     <p>
-                        明日作ります
+                        QRコード決済の取り扱い方法について説明します。QRコードはAirペイQRアプリを使用します。以下のサイトも参考にしてください。
+                        <ul className="list-disc ml-6">
+                            <li>
+                                <Link href={"https://faq.mp.airregi.jp/hc/ja/articles/360016878174-QR%E3%82%B3%E3%83%BC%E3%83%89-%E3%83%90%E3%83%BC%E3%82%B3%E3%83%BC%E3%83%89%E3%81%AB%E3%82%88%E3%82%8B%E6%B1%BA%E6%B8%88%E6%96%B9%E6%B3%95"}>
+                                    AirペイQR QRコード・バーコードによる決済方法
+                                </Link>
+                            </li>
+                        </ul>
                     </p>
+
+                    <div className="flex justify-between gap-2 flex-wrap lg:flex-nowrap">
+                        <div className="p-2 flex flex-col gap-1">
+                            <p>
+                                まずはAirペイQRアプリを起動します。決済額を入力し「次へ」を押します。
+                            </p>
+                        </div>
+                        <Image src={airpayqr_inputprice} alt={"AirペイQRアプリの初期画面"} width={400} className="shadow" />
+                    </div>
+
+                    <div className="flex justify-between gap-2 flex-wrap lg:flex-nowrap">
+                        <div className="p-2 flex flex-col gap-1">
+                            <p>
+                                この画面になったら、外付けのバーコードリーダでお客様の画面上にあるQRコードを読み取ります。
+                            </p>
+                            <p>
+                                POSからAirペイQRを呼び出した場合は、この画面から始まります。
+                            </p>
+                        </div>
+                        <Image src={airpayqr_readcode} alt={"QRコード読み取り画面"} width={400} className="shadow" />
+                    </div>
+
+
+                    <div className="flex justify-between gap-2 flex-wrap lg:flex-nowrap">
+                        <div className="p-2 flex flex-col gap-1">
+                            <p>
+                                うまく読み取れない場合は、前画面下の「カメラに切り替える」ボタンを押すと、内蔵カメラで読み取ることができます。
+                            </p>
+                        </div>
+                        <Image src={airpayqr_readcodecam} alt={"QRコード読み取りカメラで"} width={400} className="shadow" />
+                    </div>
+
+
+                    <div className="flex justify-between gap-2 flex-wrap lg:flex-nowrap">
+                        <div className="p-2 flex flex-col gap-1">
+                            <p>
+                                読み取りが完了すると、自動で決済が行われます。この画面になると、レシートプリンタからお客様控えが出力されるので、切り取ってください。
+                            </p>
+                            <p>
+                                POSからAirペイQRを呼び出した場合は、ここで自動でPOSへ戻ります。
+                            </p>
+                        </div>
+                        <Image src={airpayqr_successful} alt={"QRコード決済成功"} width={400} className="shadow" />
+                    </div>
 
                 </Section>
 
