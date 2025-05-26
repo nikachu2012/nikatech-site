@@ -7,14 +7,14 @@ import { type NextRequest, NextResponse } from "next/server";
 export async function GET(request: NextRequest, { params }: { params: Promise<{ slug: string }> }) {
     // ファイル名の取得とチェック
     const bucketPath = (await params).slug;
-    if ((!bucketPath) || bucketPath.split(":").length < 2) {
+    if ((!bucketPath) || bucketPath.split("/").length < 2) {
         const response = {
             status: false,
             reason: "Path parameter filename is invalid"
         }
         return new NextResponse(JSON.stringify(response), { status: 404, headers: { "Content-Type": "application/json" } });
     }
-    const [categoryId, fileName] = bucketPath.split(":");
+    const [categoryId, fileName] = bucketPath.split("/");
 
     // レシートIDのチェック
     const searchParams = request.nextUrl.searchParams;

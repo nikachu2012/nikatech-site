@@ -157,7 +157,7 @@ export default async function Home({ params }: {
 
                 <Section title={"ダウンロード可能なアセット"} id="assets">
                     {receipt.item.map(async (item, itemIndex) => {
-                        const r2list = await context.env.NIKATECH_ASSETS.list({ "prefix": item.id.trim() + ":" })
+                        const r2list = await context.env.NIKATECH_ASSETS.list({ "prefix": item.id.trim() + "/" })
 
                         return <div key={itemIndex}>
                             <div className="font-bold">{item.name} ({item.id})</div>
@@ -165,7 +165,7 @@ export default async function Home({ params }: {
                                 {r2list.objects.map((obj, keyIndex) => {
                                     return <li key={keyIndex}>
                                         <a href={`/download/${encodeURIComponent(obj.key)}?receipt=${receipt.id.toLowerCase()}`}>
-                                            {obj.key.split(":")[1]}
+                                            {obj.key.split("/")[1]}
                                         </a><br />
                                         <span className="font-mono text-xs">
                                             Size: {obj.size} Bytes ({(obj.size / 1024 / 1024).toFixed(2)} MiB)
