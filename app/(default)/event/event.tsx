@@ -1,4 +1,5 @@
 import Link from "next/link";
+import RealtimeEvent from "./realtimeEvent";
 
 export function EventSchedule() {
     return <>
@@ -38,6 +39,9 @@ export function EventSchedule() {
                     </tr>
                 </tbody>
             </table>
+            <div className="mt-2">
+                <RealtimeEvent />
+            </div>
         </div>
     </>
 }
