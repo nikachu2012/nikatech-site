@@ -23,7 +23,7 @@ export function EventSchedule() {
                 <tbody>
                     <tr>
                         <td className="border border-neutral-400 p-1 px-2">新刊</td>
-                        <td className="border border-neutral-400 p-1 px-2"><Link href={"/item/avrasm"}>Arduinoで学ぶアセンブリ</Link></td>
+                        <td className="border border-neutral-400 p-1 px-2"><Link href={"/item/avrasm"}>Arduinoで始めるアセンブリ</Link></td>
                         <td className="border border-neutral-400 p-1 px-2">JPY 500</td>
                     </tr>
                     <tr>

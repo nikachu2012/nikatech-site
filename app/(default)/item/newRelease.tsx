@@ -6,9 +6,9 @@ import Link from "next/link";
 export function NewReleaseList() {
     return <>
         <ul className="list-disc list-outside ml-6">
-            <li><Link href={"item/smartremote_guide"}>スマートリモコン自作ガイド（入稿済み）</Link></li>
+            <li><Link href={"item/smartremote_guide"}>スマートリモコン自作ガイド（届いたよ）</Link></li>
             <li>
-                <Link href={"item/avrasm"}>Arduinoで学ぶアセンブリ（入稿済み）</Link><br />
+                <Link href={"item/avrasm"}>Arduinoで始めるアセンブリ（届いたよ）</Link><br />
                 サークル代表へ　アセンブラじゃなくてアセンブ<b>リ</b>ですご注意を
             </li>
         </ul>
