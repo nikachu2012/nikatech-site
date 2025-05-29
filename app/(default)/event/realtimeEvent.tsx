@@ -54,17 +54,15 @@ export default function RealtimeEvent() {
 
     if (!status) {
         // if status is null
-        return <div>
+        return <div className="flex flex-wrap gap-2">
             <span className="font-bold">サークル代表の現在の居場所</span>
             <span>読み込み中です...</span>
         </div>
     }
 
 
-    return <div>
-        <div className="flex flex-wrap gap-2">
+    return <div className="flex flex-wrap gap-2">
             <span className="font-bold">サークル代表の現在の居場所({formatDate(date)}更新)</span>
             {status.headStatus ? <span className="text-green-600">出展ブース内</span> : <span className="text-red-600">出展ブース外</span>}
         </div>
-    </div>
 }
