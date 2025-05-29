@@ -11,6 +11,7 @@ export function NewReleaseList() {
                 <Link href={"item/avrasm"}>Arduinoで始めるアセンブリ（届いたよ）</Link><br />
                 サークル代表へ　アセンブラじゃなくてアセンブ<b>リ</b>ですご注意を
             </li>
+            <li><Link href={"item/unicode_animal_paper"}>Unicode 動物絵文字 コードポイント表</Link><br /></li>
         </ul>
 
         <div className="flex justify-center">

@@ -31,6 +31,11 @@ export function EventSchedule() {
                         <td className="border border-neutral-400 p-1 px-2"><Link href={"/item/smartremote_guide"}>スマートリモコン自作ガイド</Link></td>
                         <td className="border border-neutral-400 p-1 px-2">JPY 500</td>
                     </tr>
+                    <tr>
+                        <td className="border border-neutral-400 p-1 px-2">新刊</td>
+                        <td className="border border-neutral-400 p-1 px-2"><Link href={"/item/unicode_animal_paper"}>Unicode 動物絵文字 コードポイント表</Link></td>
+                        <td className="border border-neutral-400 p-1 px-2">JPY 100</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
