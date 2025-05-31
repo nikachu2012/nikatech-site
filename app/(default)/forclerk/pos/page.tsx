@@ -161,6 +161,10 @@ export default function Home() {
                     <div className="bg-yellow-200 border border-yellow-400 p-2 rounded">
                         領収書ボタンで領収書を印刷できます。レシートと領収書はどちらか一方しか発行できません（片方を発行するとボタンが押せなくなります）。
                     </div>
+                    <div className="bg-yellow-200 border border-yellow-400 p-2 rounded">
+                        クレジット・銀聯決済の場合、POSに戻った後のレシート印刷に時間がかかり、その間固まったように見えることがあります。<br />
+                        これはレシートプリンタへの再接続を待っているので、印刷されるまでそのまま待つようにしてください。
+                    </div>
                     <p>
                         取引が成立したら必ず、<span className="text-blue-600">次の取引へ</span>ボタンを押して次の取引を入力してください。（これがデータベース書き込みのトリガーです）
                     </p>
