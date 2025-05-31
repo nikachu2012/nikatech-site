@@ -101,11 +101,15 @@ export default function Home() {
                         お客様から伺った決済方法をPOSに入力します。<br />
                         現金、クレジット（銀聯除く）、QRコード決済は基本画面から直接入力可能です。それ以外の決済方法の場合は決済ex→決済方法の順に選択してください。
                     </p>
+
+                    <p>
+                        お客様に「銀聯（ぎんれん）で」と言われた場合は、「ｸﾚ」ではなく決済ex→銀聯(Airペイ)を選択してください。
+                    </p>
                     <div className="flex justify-center">
                         <Image src={paymentEx} alt={"決済方法"} width={300} className="shadow" />
                     </div>
                     <div className="bg-red-200 border border-red-400 p-2 rounded">
-                        決済exから選択する場合、クレジット、QRコードは&quot;（Airペイ）&quot;がついているものにしてください。
+                        決済exから選択する場合、クレジット、銀聯、QRコードは&quot;（Airペイ）&quot;がついているものにしてください。
                     </div>
 
                     <h3 className="font-bold">預かり金の入力</h3>

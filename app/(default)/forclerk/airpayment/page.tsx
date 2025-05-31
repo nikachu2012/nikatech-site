@@ -91,6 +91,11 @@ export default function Home() {
                             <p>
                                 左側で決済方法を選んで金額を入力し、「決済へ進む」を押します。
                             </p>
+
+                            <p>
+                                お客様から「クレジットで」、「カードで」と指定された場合は、左側でクレジットカードを選択します。<br />
+                                「銀聯（ぎんれん）で」と指定された場合は、左側でUnionPay（銀聯）を選択します。
+                            </p>
                         </div>
                         <Image src={airpay_inputprice} alt={"決済額入力画面"} width={400} className="shadow" />
                     </div>
