@@ -39,9 +39,9 @@ export function EventSchedule() {
                     </tr>
                 </tbody>
             </table>
-            <div className="mt-2">
+            {/* <div className="mt-2">
                 <RealtimeEvent />
-            </div>
+            </div> */}
         </div>
     </>
 }
