@@ -1,5 +1,4 @@
 import Link from "next/link";
-import RealtimeEvent from "./realtimeEvent";
 
 export function EventSchedule() {
     return <>
