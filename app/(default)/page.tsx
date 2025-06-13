@@ -39,21 +39,21 @@ export default function Home() {
         </Section>
 
         <Section title={"お知らせ"} id="announcement">
-          <ul className="ml-6 list-disc">
-            <li>
-              <span className="font-mono text-neutral-">{GetDateISO8601String(new Date("2025-06-13T22:42:40.000+09:00"))}</span><br />
+          <ul className="list-none divide-y divide-neutral-300">
+            <li className="p-2">
+              <span className="font-mono text-neutral-500 text-sm">{GetDateISO8601String(new Date("2025-06-13T22:42:40.000+09:00"))}</span><br />
               <div>
                 BOOTHでの電子版の頒布を開始しました！<Link href={"https://nikatech.booth.pm/"}>BOOTHでの頒布ページ</Link>
               </div>
             </li>
-            <li>
-              <span className="font-mono text-neutral-">{GetDateISO8601String(new Date("2025-06-02T00:00:00.000+09:00"))}</span><br />
+            <li className="p-2">
+              <span className="font-mono text-neutral-500 text-sm">{GetDateISO8601String(new Date("2025-06-02T00:00:00.000+09:00"))}</span><br />
               <div>
                 技術書典18撤収しました。本当に楽しかったです。皆様お越しいただきありがとうございました！！
               </div>
             </li>
-            <li>
-              <span className="font-mono text-neutral-">{GetDateISO8601String(new Date("2025-05-16T12:41:42.000+09:00"))}</span><br />
+            <li className="p-2">
+              <span className="font-mono text-neutral-500 text-sm">{GetDateISO8601String(new Date("2025-05-16T12:41:42.000+09:00"))}</span><br />
               <div>
                 6/1(日) 技術書典18参加します！出展場所は<b>う17</b>です。皆様のお越しをお待ちしております。
               </div>
