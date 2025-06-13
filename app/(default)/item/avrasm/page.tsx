@@ -62,10 +62,10 @@ export default function Home() {
 
           <div>
             <Link href={"https://techbookfest.org/product/5Mnfueeg0GCT4mYxc6ifk9"} target="_blank">
-              技術書典の販売ページはこちら
+              技術書典の頒布ページはこちら
             </Link><br />
             <Link href={"https://nikatech.booth.pm/items/7043778"} target="_blank">
-              BOOTHの販売ページはこちら
+              BOOTHの頒布ページはこちら
             </Link><br />
           </div>
         </Section>
@@ -83,7 +83,7 @@ export default function Home() {
         </Section>
 
 
-        <Section title={"販売履歴"}>
+        <Section title={"頒布履歴"}>
 
           <div>
             <table className="border-collapse border border-neutral-300">
