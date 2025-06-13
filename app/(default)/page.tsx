@@ -43,7 +43,7 @@ export default function Home() {
             <li>
               <span className="font-mono text-neutral-">{GetDateISO8601String(new Date("2025-06-13T22:42:40.000+09:00"))}</span><br />
               <div>
-                BOOTHでの販売を開始しました！<Link href={"https://nikatech.booth.pm/"}>BOOTHでの販売ページ</Link>
+                BOOTHでの電子版の頒布を開始しました！<Link href={"https://nikatech.booth.pm/"}>BOOTHでの頒布ページ</Link>
               </div>
             </li>
             <li>
