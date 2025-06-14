@@ -6,6 +6,7 @@ import Image from "next/image";
 import creditAcceptance from "./credit_acceptance.svg";
 import qrAcceptance from "./qr_acceptance.svg";
 import HeaderFooter from "@/components/HeaderFooter";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: '標準決済方法一覧',
@@ -57,6 +58,12 @@ export default function Home() {
             <Image src={qrAcceptance} alt={"Alipay+, WeChat Pay, COIN+, auPAY, d払い, UnionPay QR"} width={600} />
           </div>
 
+          <h3 className="font-bold mt-2">過去のお支払い方法一覧</h3>
+          <div>
+            <ul className="list-disc ml-6">
+              <li className=""><Link href={"/acceptance/acceptance_20250601_tbf18.pdf"}>技術書典18（2025/06/01）</Link></li>
+            </ul>
+          </div>
         </Section>
 
         <Section title={"レシートと領収書"} id="receipt">
