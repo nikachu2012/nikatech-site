@@ -35,7 +35,8 @@ export default function Home() {
           <div>
             <ul className="list-disc ml-6">
               <li>端末はMiura Systems M010（Airペイ）です。</li>
-              <li>iPhoneでのTap to Pay（VISA, Mastercardのタッチ決済のみ）も使用できます。サークル代表が出展場所にいる際にお声がけください。</li>
+              <li>iPhoneでのTap to Pay（VISA, Mastercardのタッチ決済のみ）もご利用になれます。サークル代表がいる際にお声がけください。</li>
+              <li>本人確認として暗証番号を求められた場合は、必ずご入力ください。</li>
             </ul>
           </div>
           {/* <div className="flex items-center gap-2 justify-center">
@@ -44,18 +45,10 @@ export default function Home() {
           <div className="bg-red-200 border border-red-400 p-2 rounded">
             金属カードを使用したことによる決済端末の故障が多く発生しています。金属カードをご利用になる場合はコンタクトレス決済でお願いします。
           </div>
-          <div className="bg-yellow-200 border border-yellow-400 p-2 rounded">
-            暗証番号スキップ（PINバイパス）は2025年3月にて原則廃止となります。{/* <Link href={"https://www.jcca-office.gr.jp/dealer/handling/ichandling/"} target="_blank">関連リンク</Link> */}<br />
-            本人確認には暗証番号をご利用ください（一部暗証番号の入力が必要ない場合もあります）。
-          </div>
-          <div className="bg-yellow-200 border border-yellow-400 p-2 rounded">
-            一部スマートフォン端末において決済端末が反応しない、再起動するといった問題が起きる場合があるようです。その場合はTap to Payにて取り扱います。
-          </div>
-
           <h3 className="font-bold mt-2">QRコード決済</h3>
 
           <div className="flex justify-center my-2">
-            <Image src={qrAcceptance} alt={"Alipay+, WeChat Pay, COIN+, auPAY, d払い, UnionPay QR"} width={600} />
+            <Image src={qrAcceptance} alt={"Alipay+, WeChat Pay, COIN+, auPAY, d払い, UnionPay QR"} width={700} />
           </div>
 
           <h3 className="font-bold mt-2">過去のお支払い方法一覧</h3>
@@ -74,7 +67,6 @@ export default function Home() {
             サークル代表のいる時にお申し付けいただければ、領収書も発行することができます。<br />
             なお、インボイス制度には対応していません。<br />
           </p>
-
 
           <p>
             また、レシートおよび領収書に記載されたQRコードを読み込むことで購入明細書を表示することができます。<br />
