@@ -56,7 +56,7 @@ export default function HeaderFooter({ children }: { children: ReactNode }) {
         </div>
         <div className="w-full lg:w-[1000px] m-auto">
 
-            <div className="w-full bg-white m-auto px-4 pb-4 shadow">
+            <div className="w-full bg-white m-auto px-4 pb-4">
                 {children}
             </div>
 
