@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Hiragino Kaku Gothic ProN", "Helvetica Neue", "Hiragino Sans", "Noto Sans", "Noto Sans JP", "Noto Sans CJK JP", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-sans: "Helvetica", "Helvetica Neue","Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans", "Noto Sans JP", "Noto Sans CJK JP", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
