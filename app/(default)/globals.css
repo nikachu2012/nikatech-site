@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Helvetica", "Helvetica Neue","Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans", "Noto Sans JP", "Noto Sans CJK JP", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-sans: "Helvetica", "Helvetica Neue", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans", "Noto Sans JP", "Noto Sans CJK JP", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
@@ -19,4 +19,16 @@ a {
   color: #008db7;
   text-decoration: underline;
   text-underline-offset: 2px;
+}
+
+.btn {
+  @apply font-bold py-2 px-4 rounded hover:cursor-pointer;
+}
+
+.btn-blue {
+  @apply bg-blue-500 text-white;
+}
+
+.btn-blue:hover {
+  @apply bg-blue-700;
 }
