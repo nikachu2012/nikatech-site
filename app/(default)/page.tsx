@@ -38,28 +38,30 @@ export default function Home() {
           </p>
         </Section>
 
-        <Section title={"お知らせ"} id="announcement">
-          <ul className="list-none divide-y divide-neutral-300">
-            <li className="p-2">
-              <span className="font-mono text-neutral-500 text-sm">{GetDateISO8601String(new Date("2025-06-13T22:42:40.000+09:00"))}</span><br />
+
+        <section id="announcement">
+          <h2 className="font-bold text-2xl border-b border-neutral-300 pb-1 mb-2">お知らせ</h2>
+          <ul className="list-disc flex flex-col gap-4 mt-4">
+            <li className="flex flex-col lg:flex-row gap-1 lg:gap-2 items-left lg:items-center">
+              <span className="font-mono text-neutral-500 text-sm">{GetDateISO8601String(new Date("2025-06-13T22:42:40.000+09:00"))}</span>
               <div>
                 BOOTHでの電子版の頒布を開始しました！<Link href={"https://nikatech.booth.pm/"}>BOOTHでの頒布ページ</Link>
               </div>
             </li>
-            <li className="p-2">
-              <span className="font-mono text-neutral-500 text-sm">{GetDateISO8601String(new Date("2025-06-02T00:00:00.000+09:00"))}</span><br />
+            <li className="flex flex-col lg:flex-row gap-1 lg:gap-2 items-left lg:items-center">
+              <span className="font-mono text-neutral-500 text-sm">{GetDateISO8601String(new Date("2025-06-02T00:00:00.000+09:00"))}</span>
               <div>
                 技術書典18撤収しました。本当に楽しかったです。皆様お越しいただきありがとうございました！！
               </div>
             </li>
-            <li className="p-2">
-              <span className="font-mono text-neutral-500 text-sm">{GetDateISO8601String(new Date("2025-05-16T12:41:42.000+09:00"))}</span><br />
+            <li className="flex flex-col lg:flex-row gap-1 lg:gap-2 items-left lg:items-center">
+              <span className="font-mono text-neutral-500 text-sm">{GetDateISO8601String(new Date("2025-05-16T12:41:42.000+09:00"))}</span>
               <div>
                 6/1(日) 技術書典18参加します！出展場所は<b>う17</b>です。皆様のお越しをお待ちしております。
               </div>
             </li>
           </ul>
-        </Section>
+        </section>
 
         <Section title={"参加予定イベント"} id="event">
           <EventSchedule />
