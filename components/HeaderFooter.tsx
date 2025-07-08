@@ -73,7 +73,7 @@ export default function HeaderFooter({ children }: { children: ReactNode }) {
             </div>
         </div>
         <footer className="w-full text-neutral-500 bg-neutral-100">
-            <div className="w-full lg:w-[1200px] m-auto grid grid-cols-3 py-4 gap-4">
+            <div className="w-full lg:w-[1200px] m-auto grid grid-rows-3 grid-cols-1 lg:grid-rows-1 lg:grid-cols-3 p-4 lg:px-0 gap-4">
                 <div className="flex flex-col gap-1">
                     <div className="font-bold text-sm mb-1">ページリンク</div>
                     <FooterLink href="/event">イベント</FooterLink>
@@ -96,7 +96,7 @@ export default function HeaderFooter({ children }: { children: ReactNode }) {
                 </div>
             </div>
             <hr className="text-neutral-400" />
-            <div className="w-full lg:w-[1200px] m-auto font-mono text-sm py-4">
+            <div className="w-full lg:w-[1200px] m-auto font-mono text-sm p-4 lg:px-0">
                 <div className="flex flex-col flex-wrap gap-2">
                     <span className="leading-none">Last updated: {GetDateISO8601String(new Date(Date.now()))}</span>
                 </div>
