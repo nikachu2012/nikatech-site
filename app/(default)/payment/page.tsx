@@ -54,7 +54,7 @@ export default function Home() {
           <h3 className="font-bold mt-2">過去のお支払い方法一覧</h3>
           <div>
             <ul className="list-disc ml-6">
-              <li className=""><Link href={"/acceptance/acceptance_20250601_tbf18.pdf"}>技術書典18（2025/06/01）</Link></li>
+              <li className=""><Link className="link" href={"/acceptance/acceptance_20250601_tbf18.pdf"}>技術書典18（2025/06/01）</Link></li>
             </ul>
           </div>
         </Section>

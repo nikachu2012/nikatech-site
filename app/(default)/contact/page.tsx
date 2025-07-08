@@ -19,12 +19,12 @@ export default function Home() {
                     </p>
 
                     <p>
-                        暗号化が必要な場合は、<Link href={"https://portfolio.nikachu.net/publickey"} target="_blank">OpenPGP公開鍵</Link>を利用して暗号化してください。
+                        暗号化が必要な場合は、<Link className="link" href={"https://portfolio.nikachu.net/publickey"} target="_blank">OpenPGP公開鍵</Link>を利用して暗号化してください。
                     </p>
 
                     <p>Googleフォームを使用しています。送信にはGoogleアカウントが必要です。</p>
 
-                    <Link href="https://forms.gle/7ixA4yZEv6ToTEU76" target="_blank" className="ml-0">ご意見フォーム</Link>
+                    <Link href="https://forms.gle/7ixA4yZEv6ToTEU76" target="_blank" className="link ml-0">ご意見フォーム</Link>
                 </Section>
 
             </main>

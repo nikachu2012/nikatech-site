@@ -44,7 +44,7 @@ export default function Home() {
                 </tr>
                 <tr>
                   <td>著者</td>
-                  <td>nikachu（<Link href={"https://twitter.com/nikachu2012"} target="_blank">@nikachu2012</Link>）</td>
+                  <td>nikachu（<Link className="link" href={"https://twitter.com/nikachu2012"} target="_blank">@nikachu2012</Link>）</td>
                 </tr>
                 <tr>
                   <td>サイズ</td>
@@ -63,7 +63,7 @@ export default function Home() {
           </div>
 
           <div>
-            <Link href={"https://techbookfest.org/product/f9XdxRtseP18rPWJdVtnY9"} target="_blank">
+            <Link className="link" href={"https://techbookfest.org/product/f9XdxRtseP18rPWJdVtnY9"} target="_blank">
               技術書典の頒布ページはこちら
             </Link><br />
           </div>
@@ -98,7 +98,7 @@ export default function Home() {
 
 
                 <tr>
-                  <td><Link href={"https://techbookfest.org/event/tbf18"} target="_blank">技術書典18</Link></td>
+                  <td><Link className="link" href={"https://techbookfest.org/event/tbf18"} target="_blank">技術書典18</Link></td>
                   <td>2025-06-01</td>
                   <td className="text-right">1</td>
                   <td>JPY 100</td>

@@ -38,7 +38,7 @@ export default function Home() {
                 </tr>
                 <tr>
                   <td>著者</td>
-                  <td>nikachu（<Link href={"https://twitter.com/nikachu2012"} target="_blank">@nikachu2012</Link>）</td>
+                  <td>nikachu（<Link className="link" href={"https://twitter.com/nikachu2012"} target="_blank">@nikachu2012</Link>）</td>
                 </tr>
                 <tr>
                   <td>ISDN（Cコード）</td>
@@ -61,10 +61,10 @@ export default function Home() {
           </div>
 
           <div>
-            <Link href={"https://techbookfest.org/product/5Mnfueeg0GCT4mYxc6ifk9"} target="_blank">
+            <Link className="link" href={"https://techbookfest.org/product/5Mnfueeg0GCT4mYxc6ifk9"} target="_blank">
               技術書典の頒布ページはこちら
             </Link><br />
-            <Link href={"https://nikatech.booth.pm/items/7043778"} target="_blank">
+            <Link className="link" href={"https://nikatech.booth.pm/items/7043778"} target="_blank">
               BOOTHの頒布ページはこちら
             </Link><br />
           </div>
@@ -73,7 +73,7 @@ export default function Home() {
         <Section title={"サポート"}>
           <h3 className="font-bold">ソースコード</h3>
 
-          <Link href={"https://github.com/nikachu2012/avrasm_book_support"} target="_blank">
+          <Link className="link" href={"https://github.com/nikachu2012/avrasm_book_support"} target="_blank">
             ソースコードはこちら
           </Link>
 
@@ -99,7 +99,7 @@ export default function Home() {
 
 
                 <tr>
-                  <td><Link href={"https://techbookfest.org/event/tbf18"} target="_blank">技術書典18</Link></td>
+                  <td><Link className="link" href={"https://techbookfest.org/event/tbf18"} target="_blank">技術書典18</Link></td>
                   <td>2025-06-01</td>
                   <td className="text-right">1</td>
                   <td>JPY 500</td>

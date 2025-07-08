@@ -61,12 +61,12 @@ export default function Home() {
                         まずはクレジットの取り扱い方法について解説します。クレジットはAirペイアプリを使用します。以下のサイトも参考にしてください。
                         <ul className="list-disc ml-6">
                             <li>
-                                <Link href={"https://faq.airpayment.jp/hc/ja/articles/219815268-Air%E3%83%9A%E3%82%A4-%E3%82%AF%E3%83%AC%E3%82%B8%E3%83%83%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89%E6%B1%BA%E6%B8%88%E6%99%82%E3%81%AE%E6%93%8D%E4%BD%9C%E6%96%B9%E6%B3%95"}>
+                                <Link className="link" href={"https://faq.airpayment.jp/hc/ja/articles/219815268-Air%E3%83%9A%E3%82%A4-%E3%82%AF%E3%83%AC%E3%82%B8%E3%83%83%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89%E6%B1%BA%E6%B8%88%E6%99%82%E3%81%AE%E6%93%8D%E4%BD%9C%E6%96%B9%E6%B3%95"}>
                                     Airペイ クレジットカード決済時の操作方法
                                 </Link>
                             </li>
                             <li>
-                                <Link href={"https://faq.airpayment.jp/hc/ja/articles/360036234354-Air%E3%83%9A%E3%82%A4-UnionPay-%E9%8A%80%E8%81%AF-%E3%82%AB%E3%83%BC%E3%83%89%E6%B1%BA%E6%B8%88%E6%99%82%E3%81%AE%E6%93%8D%E4%BD%9C%E6%96%B9%E6%B3%95"}>
+                                <Link className="link" href={"https://faq.airpayment.jp/hc/ja/articles/360036234354-Air%E3%83%9A%E3%82%A4-UnionPay-%E9%8A%80%E8%81%AF-%E3%82%AB%E3%83%BC%E3%83%89%E6%B1%BA%E6%B8%88%E6%99%82%E3%81%AE%E6%93%8D%E4%BD%9C%E6%96%B9%E6%B3%95"}>
                                     Airペイ UnionPay（銀聯）カード決済時の操作方法
                                 </Link>
                             </li>
@@ -232,7 +232,7 @@ export default function Home() {
                         QRコード決済の取り扱い方法について説明します。QRコードはAirペイQRアプリを使用します。以下のサイトも参考にしてください。
                         <ul className="list-disc ml-6">
                             <li>
-                                <Link href={"https://faq.mp.airregi.jp/hc/ja/articles/360016878174-QR%E3%82%B3%E3%83%BC%E3%83%89-%E3%83%90%E3%83%BC%E3%82%B3%E3%83%BC%E3%83%89%E3%81%AB%E3%82%88%E3%82%8B%E6%B1%BA%E6%B8%88%E6%96%B9%E6%B3%95"}>
+                                <Link className="link" href={"https://faq.mp.airregi.jp/hc/ja/articles/360016878174-QR%E3%82%B3%E3%83%BC%E3%83%89-%E3%83%90%E3%83%BC%E3%82%B3%E3%83%BC%E3%83%89%E3%81%AB%E3%82%88%E3%82%8B%E6%B1%BA%E6%B8%88%E6%96%B9%E6%B3%95"}>
                                     AirペイQR QRコード・バーコードによる決済方法
                                 </Link>
                             </li>

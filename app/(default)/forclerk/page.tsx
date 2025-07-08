@@ -17,11 +17,11 @@ export default function Home() {
 
                     <ul className="list-disc ml-6">
                         <li>
-                            <Link href={"forclerk/pos"}>POSの操作方法</Link><br />
+                            <Link className="link" href={"forclerk/pos"}>POSの操作方法</Link><br />
                             nikatechでは、独自開発のPOSを使用します。POSの操作方法を雑に解説します。
                         </li>
                         <li>
-                            <Link href={"forclerk/airpayment"}>Airペイ（クレジット・QRコード）の操作方法</Link><br />
+                            <Link className="link" href={"forclerk/airpayment"}>Airペイ（クレジット・QRコード）の操作方法</Link><br />
                             nikatechでは、キャッシュレス決済にAirペイを使用します。Airペイの操作方法と、クレジットの取り扱い方法をこちらも雑に解説します。公式のガイドとともに見ることをお勧めします。
                         </li>
                     </ul>

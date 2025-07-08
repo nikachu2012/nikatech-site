@@ -72,12 +72,6 @@ export default function Home() {
           <NewReleaseList />
         </Section>
 
-        <Section title={"SNS"} id="sns">
-          <div>
-            <div>サークル代表のTwitter(新X)は<Link href={"https://twitter.com/nikachu2012"} target="_blank">こちら</Link></div>
-            <div>サークル代表のポートフォリオは<Link href={"https://portfolio.nikachu.net"} target="_blank">こちら</Link></div>
-          </div>
-        </Section>
       </main>
     </HeaderFooter>
 

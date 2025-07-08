@@ -21,8 +21,8 @@ export default function Home() {
                         <div className="">2025-06-01 (日) / 池袋・サンシャインシティ 文化会館ビル2F 展示ホールD / う17</div>
 
                         <div className="flex flex-wrap my-1 gap-2">
-                            <Link href={"https://techbookfest.org/event/tbf18"} target="_blank">イベントの公式ページ</Link>
-                            <Link href={"https://techbookfest.org/organization/KdLZ1mQYzBTzyyz68x2UX"} target="_blank">サークルページ</Link>
+                            <Link className="link" href={"https://techbookfest.org/event/tbf18"} target="_blank">イベントの公式ページ</Link>
+                            <Link className="link" href={"https://techbookfest.org/organization/KdLZ1mQYzBTzyyz68x2UX"} target="_blank">サークルページ</Link>
                         </div>
 
                         <table className="border-collapse mt-2 table-auto">
@@ -37,17 +37,17 @@ export default function Home() {
                             <tbody>
                                 <tr>
                                     <td className="border border-neutral-400 p-1 px-2">新刊</td>
-                                    <td className="border border-neutral-400 p-1 px-2"><Link href={"/item/avrasm"}>Arduinoで始めるアセンブリ</Link></td>
+                                    <td className="border border-neutral-400 p-1 px-2"><Link className="link" href={"/item/avrasm"}>Arduinoで始めるアセンブリ</Link></td>
                                     <td className="border border-neutral-400 p-1 px-2">JPY 500</td>
                                 </tr>
                                 <tr>
                                     <td className="border border-neutral-400 p-1 px-2">新刊</td>
-                                    <td className="border border-neutral-400 p-1 px-2"><Link href={"/item/smartremote_guide"}>スマートリモコン自作ガイド</Link></td>
+                                    <td className="border border-neutral-400 p-1 px-2"><Link className="link" href={"/item/smartremote_guide"}>スマートリモコン自作ガイド</Link></td>
                                     <td className="border border-neutral-400 p-1 px-2">JPY 500</td>
                                 </tr>
                                 <tr>
                                     <td className="border border-neutral-400 p-1 px-2">新刊</td>
-                                    <td className="border border-neutral-400 p-1 px-2"><Link href={"/item/unicode_animal_paper"}>Unicode 動物絵文字 コードポイント表</Link></td>
+                                    <td className="border border-neutral-400 p-1 px-2"><Link className="link" href={"/item/unicode_animal_paper"}>Unicode 動物絵文字 コードポイント表</Link></td>
                                     <td className="border border-neutral-400 p-1 px-2">JPY 100</td>
                                 </tr>
                             </tbody>

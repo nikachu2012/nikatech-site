@@ -24,7 +24,7 @@ export default function Home() {
                     <h3 className="font-bold">制作検討中</h3>
                     <ul className="list-disc list-outside ml-6">
                         <li>
-                            <Link href={"#"}>PSPで学ぶMIPSアーキテクチャ（幻）</Link><br />
+                            <Link className="link" href={"#"}>PSPで学ぶMIPSアーキテクチャ（幻）</Link><br />
                             めっちゃデータつきのELF使われててよくわからん
                         </li>
                     </ul>
