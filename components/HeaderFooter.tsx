@@ -15,6 +15,15 @@ const linkList: {
     ]
 
 
+function FooterLink({ href, children, className, newtab }: { href: string, children: ReactNode, className?: string, newtab?: boolean }) {
+    return <Link href={href} target={newtab ? "_blank" : undefined}>
+        <span className={`hover:underline underline-offset-2 ${className}`}>
+            {children}
+        </span>
+    </Link>
+}
+
+
 export default function HeaderFooter({ children }: { children: ReactNode }) {
     return <>
         <div className="w-full bg-white border-b border-b-neutral-300 sticky top-0 z-999999">
@@ -63,8 +72,31 @@ export default function HeaderFooter({ children }: { children: ReactNode }) {
                 {children}
             </div>
         </div>
-        <footer className="w-full text-neutral-400 p-4 bg-neutral-100">
-            <div className="w-full lg:w-[1200px] m-auto font-mono text-sm">
+        <footer className="w-full text-neutral-500 bg-neutral-100">
+            <div className="w-full lg:w-[1200px] m-auto grid grid-cols-3 py-4 gap-4">
+                <div className="flex flex-col gap-1">
+                    <div className="font-bold text-sm mb-1">ページリンク</div>
+                    <FooterLink href="/event">イベント</FooterLink>
+                    <FooterLink href="/payment">お支払い</FooterLink>
+                    <FooterLink href="/item">頒布品</FooterLink>
+                    <FooterLink href="/contact">お問い合わせ</FooterLink>
+                    <FooterLink href="/forclerk">売り子の方へ</FooterLink>
+                </div>
+
+                <div className="flex flex-col gap-1">
+                    <div className="font-bold text-sm mb-1">サークル代表SNS</div>
+                    <FooterLink href="https://portfolio.nikachu.net" newtab>ポートフォリオ</FooterLink>
+                    <FooterLink href="https://twitter.com/nikachu2012" newtab>Twitter（新X）</FooterLink>
+                </div>
+
+                <div className="flex flex-col gap-1">
+                    <div className="font-bold text-sm mb-1">頒布サイト</div>
+                    <FooterLink href="https://nikatech.booth.pm/" newtab>BOOTH</FooterLink>
+                    <FooterLink href="https://techbookfest.org/organization/KdLZ1mQYzBTzyyz68x2UX" newtab>技術書典公式サイト</FooterLink>
+                </div>
+            </div>
+            <hr className="text-neutral-400" />
+            <div className="w-full lg:w-[1200px] m-auto font-mono text-sm py-4">
                 <div className="flex flex-col flex-wrap gap-2">
                     <span className="leading-none">Last updated: {GetDateISO8601String(new Date(Date.now()))}</span>
                 </div>

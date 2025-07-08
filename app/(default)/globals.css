@@ -14,8 +14,8 @@
     --foreground: #ededed;
   }
 } */
-
-a {
+ 
+.link {
   color: #008db7;
   text-decoration: underline;
   text-underline-offset: 2px;
