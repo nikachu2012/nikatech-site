@@ -43,9 +43,21 @@ export default function Home() {
           <h2 className="font-bold text-2xl border-b border-neutral-300 pb-1 mb-2">お知らせ</h2>
           <ul className="list-disc flex flex-col gap-4 mt-4">
             <li className="flex flex-col lg:flex-row gap-1 lg:gap-2 items-left lg:items-center">
+              <span className="font-mono text-neutral-500 text-sm">{GetDateISO8601String(new Date("2025-08-15T13:48:00.000+09:00"))}</span>
+              <div>
+                技術書典19応募しました。新刊も鋭意制作中です！
+              </div>
+            </li>
+            <li className="flex flex-col lg:flex-row gap-1 lg:gap-2 items-left lg:items-center">
+              <span className="font-mono text-neutral-500 text-sm">{GetDateISO8601String(new Date("2025-08-15T00:00:00.000+09:00"))}</span>
+              <div>
+                11/8(土), 11/9(日) 沼津高専第60回高専祭に委託参加します！ <Link className="link" href={"https://csc.nikachu.net"} target="_blank">情報工学同好会 (非公認)</Link>への委託です。
+              </div>
+            </li>
+            <li className="flex flex-col lg:flex-row gap-1 lg:gap-2 items-left lg:items-center">
               <span className="font-mono text-neutral-500 text-sm">{GetDateISO8601String(new Date("2025-06-13T22:42:40.000+09:00"))}</span>
               <div>
-                BOOTHでの電子版の頒布を開始しました！<Link href={"https://nikatech.booth.pm/"}>BOOTHでの頒布ページ</Link>
+                BOOTHでの電子版の頒布を開始しました！<Link className="link" href={"https://nikatech.booth.pm/"}>BOOTHでの頒布ページ</Link>
               </div>
             </li>
             <li className="flex flex-col lg:flex-row gap-1 lg:gap-2 items-left lg:items-center">
