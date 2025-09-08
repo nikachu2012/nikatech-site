@@ -43,6 +43,12 @@ export default function Home() {
           <h2 className="font-bold text-2xl border-b border-neutral-300 pb-1 mb-2">お知らせ</h2>
           <ul className="list-disc flex flex-col gap-4 mt-4">
             <li className="flex flex-col lg:flex-row gap-1 lg:gap-2 items-left lg:items-center">
+              <span className="font-mono text-neutral-500 text-sm">{GetDateISO8601String(new Date("2025-08-23T22:33:00.000+09:00"))}</span>
+              <div>
+                コミックマーケット107申し込みしました。某氏と合体申し込みしています。
+              </div>
+            </li>
+            <li className="flex flex-col lg:flex-row gap-1 lg:gap-2 items-left lg:items-center">
               <span className="font-mono text-neutral-500 text-sm">{GetDateISO8601String(new Date("2025-08-15T13:48:00.000+09:00"))}</span>
               <div>
                 技術書典19応募しました。新刊も鋭意制作中です！

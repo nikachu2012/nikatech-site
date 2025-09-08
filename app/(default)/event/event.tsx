@@ -60,5 +60,37 @@ export function EventSchedule() {
 
             </div>
         </div>
+
+        <div className="border border-neutral-400 p-2">
+            <div className="font-bold text-xl">コミックマーケット107</div>
+            <div className="">2025-12-31 (水) / 審査中です</div>
+
+            <div className="flex flex-wrap my-1 gap-2">
+                <Link className="link" href={"https://www.comiket.co.jp/info-a/C107/C107Info.html"} target="_blank">イベントの公式ページ</Link>
+                {/* <Link className="link" href={"https://techbookfest.org/organization/KdLZ1mQYzBTzyyz68x2UX"} target="_blank">サークルページ</Link> */}
+            </div>
+
+            <div>
+                頒布品未定
+                {/* <table className="border-collapse mt-1 table-auto">
+                    <thead>
+                        <tr>
+                            <th className="border border-neutral-400 p-1 px-2">種別</th>
+                            <th className="border border-neutral-400 p-1 px-2">商品名</th>
+                            <th className="border border-neutral-400 p-1 px-2">値段</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td className="border border-neutral-400 p-1 px-2">新刊</td>
+                            <td className="border border-neutral-400 p-1 px-2">ンゴシリーズ vol.1</td>
+                            <td className="border border-neutral-400 p-1 px-2">500 JPY</td>
+                        </tr>
+                    </tbody>
+                </table> */}
+
+            </div>
+        </div>
     </>
 }
