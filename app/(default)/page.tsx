@@ -45,7 +45,7 @@ export default function Home() {
             <li className="flex flex-col lg:flex-row gap-1 lg:gap-2 items-left lg:items-center">
               <span className="font-mono text-neutral-500 text-sm">{GetDateISO8601String(new Date("2025-08-15T13:48:00.000+09:00"))}</span>
               <div>
-                技術書典19(オンラインだけど)応募しました。新刊も鋭意制作中です！
+                技術書典19応募しました。新刊も鋭意制作中です！
               </div>
             </li>
             <li className="flex flex-col lg:flex-row gap-1 lg:gap-2 items-left lg:items-center">
