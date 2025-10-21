@@ -17,7 +17,7 @@ export default function Home() {
                         リンクをクリックすると紹介ページに飛ぶことができます。
                     </p>
 
-                    <h3 className="font-bold">新刊（技術書典18）</h3>
+                    <h3 className="font-bold">新刊</h3>
                     <NewReleaseList />
 
 
@@ -31,9 +31,9 @@ export default function Home() {
 
                     <h3 className="font-bold">既刊</h3>
                     <ul className="list-disc list-outside ml-6">
-                        既刊なんかねーよ　うるせえよ　黙れよ
-                        {/* <li><Link href={"item/smartremote_guide"}>スマートリモコン自作ガイド（未完成）</Link></li> */}
-                        {/* <li><Link href={"item/avrasm"}>高級言語は甘え Part1 AVRアセンブラ （未完成）</Link></li> */}
+                        {/* 既刊なんかねーよ　うるせえよ　黙れよ */}
+                        <li><Link className="link" href={"item/avrasm"}>Arduinoで始めるアセンブリ</Link></li>
+                        <li><Link className="link" href={"item/smartremote_guide"}>スマートリモコン自作ガイド</Link></li>
                     </ul>
                 </Section>
             </main>

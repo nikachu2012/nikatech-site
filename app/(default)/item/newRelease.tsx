@@ -2,8 +2,7 @@ import Image, { StaticImageData } from "next/image";
 import newRelease from "./new_release.png";
 import Link from "next/link";
 
-import avrasm_thumb from "./avrasm/thumb.png"
-import smartremote_guide_thumb from "./smartremote_guide/thumb.png"
+import llvm_homebrew_lang_thumb from "./llvm_homebrew_lang/thumb.png"
 
 function NewReleaseItem(props: { name: string, price: number, thumb: string | StaticImageData, detailPageRef: string, detail: string }) {
     const { name, price, thumb, detailPageRef, detail } = props;
@@ -15,7 +14,7 @@ function NewReleaseItem(props: { name: string, price: number, thumb: string | St
         <div className="flex flex-col justify-between py-2 lg:p-0">
             <div className="flex flex-col gap-1">
                 <span className="font-bold text-lg leading-none">{name}</span>
-                <span className="text-sm leading-none">JPY {price}</span>
+                <span className="text-sm leading-none">JPY {price.toLocaleString()}</span>
                 <span className="text-sm leading-none">{detail}</span>
             </div>
             <div className="mt-3">
@@ -30,9 +29,16 @@ function NewReleaseItem(props: { name: string, price: number, thumb: string | St
 }
 export function NewReleaseList() {
     return <>
-        <div className="w-full grid grid-rows-4 grid-cols-1 lg:grid-rows-1 lg:grid-cols-4 gap-x-6 gap-y-2">
-            <NewReleaseItem name={"Arduinoで始めるアセンブリ"} price={500} thumb={avrasm_thumb} detailPageRef={"item/avrasm"} detail={"JIS B5 / 50p / 本文モノクロ"} />
-            <NewReleaseItem name={"スマートリモコン自作ガイド"} price={500} thumb={smartremote_guide_thumb} detailPageRef={"item/smartremote_guide"}  detail={"JIS B5 / 38p / 本文モノクロ"}/>
+        {/* grid-rows-1の部分は新刊の個数に合わせて変更する */}
+        <div className="w-full grid grid-rows-1 grid-cols-1 lg:grid-rows-1 lg:grid-cols-4 gap-x-6 gap-y-2">
+            <NewReleaseItem
+                name={"LLVMで作るプログラミング言語"}
+                price={1500}
+                thumb={llvm_homebrew_lang_thumb}
+                detailPageRef={"item/llvm_homebrew_lang"}
+                detail={"JIS B5 / 150p / 本文モノクロ"}
+            />
+            {/* <NewReleaseItem name={"Arduinoで始めるアセンブリ"} price={500} thumb={avrasm_thumb} detailPageRef={"item/avrasm"} detail={"JIS B5 / 50p / 本文モノクロ"} /> */}
         </div>
         {/* <ul className="list-disc list-outside ml-6">
             <li><Link href={"item/smartremote_guide"}>スマートリモコン自作ガイド</Link></li>
