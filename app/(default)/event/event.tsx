@@ -47,13 +47,13 @@ export function EventSchedule() {
                         <td className="border border-neutral-400 p-1 px-2 text-right">JPY 100</td>
                     </tr>
                 </table>
-
             </div>
         </div>
 
         <div className="border border-neutral-400 p-2">
             <div className="font-bold text-xl">技術書典19 オフライン会場</div>
-            <div className="">2025-11-16 (日) / 審査中です</div>
+            <div className="">2025-11-16 (日) / 池袋・サンシャインシティ 文化会館ビル2F 展示ホールD / か04
+            </div>
 
             <div className="flex flex-wrap my-1 gap-2">
                 <Link className="link" href={"https://techbookfest.org/event/tbf19"} target="_blank">イベントの公式ページ</Link>
@@ -61,8 +61,7 @@ export function EventSchedule() {
             </div>
 
             <div>
-                頒布品未定
-                {/* <table className="border-collapse mt-1 table-auto">
+                <table className="border-collapse mt-1 table-auto">
                     <thead>
                         <tr>
                             <th className="border border-neutral-400 p-1 px-2">種別</th>
@@ -71,15 +70,32 @@ export function EventSchedule() {
                         </tr>
                     </thead>
 
-                    <tbody>
-                        <tr>
-                            <td className="border border-neutral-400 p-1 px-2">新刊</td>
-                            <td className="border border-neutral-400 p-1 px-2">ンゴシリーズ vol.1</td>
-                            <td className="border border-neutral-400 p-1 px-2">500 JPY</td>
-                        </tr>
-                    </tbody>
-                </table> */}
-
+                    <tr>
+                        <td className="border border-neutral-400 p-1 px-2">新刊</td>
+                        <td className="border border-neutral-400 p-1 px-2"><Link className="link" href={"/item/llvm_homebrew_lang"}>LLVMで作るプログラミング言語</Link></td>
+                        <td className="border border-neutral-400 p-1 px-2 text-right">JPY 1,500</td>
+                    </tr>
+                    <tr>
+                        <td className="border border-neutral-400 p-1 px-2">新刊</td>
+                        <td className="border border-neutral-400 p-1 px-2"><Link className="link" href={"/item/howto_isdn"}>ISDNを正しく表記してガチの本みたいな同人誌を作ろう</Link></td>
+                        <td className="border border-neutral-400 p-1 px-2 text-right">JPY 100</td>
+                    </tr>
+                    <tr>
+                        <td className="border border-neutral-400 p-1 px-2">既刊</td>
+                        <td className="border border-neutral-400 p-1 px-2"><Link className="link" href={"/item/avrasm"}>Arduinoで始めるアセンブリ</Link></td>
+                        <td className="border border-neutral-400 p-1 px-2 text-right">JPY 500</td>
+                    </tr>
+                    <tr>
+                        <td className="border border-neutral-400 p-1 px-2">既刊</td>
+                        <td className="border border-neutral-400 p-1 px-2"><Link className="link" href={"/item/smartremote_guide"}>スマートリモコン自作ガイド</Link></td>
+                        <td className="border border-neutral-400 p-1 px-2 text-right">JPY 500</td>
+                    </tr>
+                    <tr>
+                        <td className="border border-neutral-400 p-1 px-2">既刊</td>
+                        <td className="border border-neutral-400 p-1 px-2"><Link className="link" href={"/item/unicode_animal_paper"}>Unicode 動物絵文字 コードポイント表</Link></td>
+                        <td className="border border-neutral-400 p-1 px-2 text-right">JPY 100</td>
+                    </tr>
+                </table>
             </div>
         </div>
 
