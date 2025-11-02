@@ -105,6 +105,20 @@ export default function Home() {
                   <td>JPY 500</td>
                 </tr>
 
+                <tr>
+                  <td>沼津高専 第60回高専祭</td>
+                  <td>2025-11-08 - 2025-11-09</td>
+                  <td className="text-right">1, 2</td>
+                  <td>JPY 500</td>
+                </tr>
+
+                <tr>
+                  <td><Link className="link" href={"https://techbookfest.org/event/tbf19"} target="_blank">技術書典19</Link></td>
+                  <td>2025-11-16</td>
+                  <td className="text-right">1, 2</td>
+                  <td>JPY 500</td>
+                </tr>
+
 
               </tbody>
             </table>
@@ -128,6 +142,12 @@ export default function Home() {
                 <tr>
                   <td>2025-05-01</td>
                   <td className="text-right">1</td>
+                  <td className="text-right">1</td>
+                </tr>
+
+                <tr>
+                  <td>2025-11-01</td>
+                  <td className="text-right">2</td>
                   <td className="text-right">1</td>
                 </tr>
 
