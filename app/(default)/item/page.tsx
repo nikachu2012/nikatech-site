@@ -34,6 +34,7 @@ export default function Home() {
                         {/* 既刊なんかねーよ　うるせえよ　黙れよ */}
                         <li><Link className="link" href={"item/avrasm"}>Arduinoで始めるアセンブリ</Link></li>
                         <li><Link className="link" href={"item/smartremote_guide"}>スマートリモコン自作ガイド</Link></li>
+                        <li><Link className="link" href={"item/unicode_animal_paper"}>Unicode 動物絵文字 コードポイント表</Link></li>
                     </ul>
                 </Section>
             </main>
