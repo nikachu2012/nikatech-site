@@ -49,7 +49,7 @@ export default function Home() {
                   <td>A5</td>
                 </tr>
                 <tr>
-                  <td>枚数</td>
+                  <td>ページ数</td>
                   <td>4ページ</td>
                 </tr>
                 <tr>
