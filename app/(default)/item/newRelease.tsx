@@ -3,6 +3,7 @@ import newRelease from "./new_release.png";
 import Link from "next/link";
 
 import llvm_homebrew_lang_thumb from "./llvm_homebrew_lang/thumb.png"
+import howto_isdn_thumb from "./howto_isdn/thumb.png"
 
 function NewReleaseItem(props: { name: string, price: number, thumb: string | StaticImageData, detailPageRef: string, detail: string }) {
     const { name, price, thumb, detailPageRef, detail } = props;
@@ -30,13 +31,20 @@ function NewReleaseItem(props: { name: string, price: number, thumb: string | St
 export function NewReleaseList() {
     return <>
         {/* grid-rows-1の部分は新刊の個数に合わせて変更する */}
-        <div className="w-full grid grid-rows-1 grid-cols-1 lg:grid-rows-1 lg:grid-cols-4 gap-x-6 gap-y-2">
+        <div className="w-full grid grid-rows-2 grid-cols-1 lg:grid-rows-1 lg:grid-cols-4 gap-x-6 gap-y-2">
             <NewReleaseItem
                 name={"LLVMで作るプログラミング言語"}
                 price={1500}
                 thumb={llvm_homebrew_lang_thumb}
                 detailPageRef={"item/llvm_homebrew_lang"}
                 detail={"JIS B5 / 150p / 本文モノクロ"}
+            />
+            <NewReleaseItem
+                name={"ISDNを正しく表記してガチの本みたいな同人誌を作ろう"}
+                price={100}
+                thumb={howto_isdn_thumb}
+                detailPageRef={"item/howto_isdn"}
+                detail={"A5 / 4p / フルカラー"}
             />
             {/* <NewReleaseItem name={"Arduinoで始めるアセンブリ"} price={500} thumb={avrasm_thumb} detailPageRef={"item/avrasm"} detail={"JIS B5 / 50p / 本文モノクロ"} /> */}
         </div>
