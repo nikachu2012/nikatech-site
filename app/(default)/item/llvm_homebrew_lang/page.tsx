@@ -66,11 +66,11 @@ export default function Home() {
           </div>
 
           <div>
-            <Link className="link" href={"#"} target="_blank">
-              技術書典の頒布ページはこちら（URL未定）
+            <Link className="link" href={"https://techbookfest.org/product/nX2j9FTjpMDNus2wVTYQwf"} target="_blank">
+              技術書典の頒布ページはこちら
             </Link><br />
-            <Link className="link" href={"#"} target="_blank">
-              BOOTHの頒布ページはこちら（URL未定）
+            <Link className="link" href={"https://nikatech.booth.pm/items/7564232"} target="_blank">
+              BOOTHの頒布ページはこちら
             </Link><br />
           </div>
         </Section>
