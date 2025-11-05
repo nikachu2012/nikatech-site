@@ -83,7 +83,28 @@ export default function Home() {
           </Link>
 
           <h3 className="font-bold">正誤情報</h3>
-          現在、判明している正誤情報はありません。
+
+          <div>
+            <h4 className="font-bold">第1版</h4>
+            <span>ページ117 表5.5 非等価の行</span>
+
+            <table className="border-collapse border border-neutral-300">
+              <tbody className="[&_td]:border [&_td]:border-neutral-300 [&_td]:p-1 [&_td]:px-2">
+                <tr>
+                  <td>誤</td>
+                  <td>
+                    <pre>{"<op1> == <op2>"}</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>正</td>
+                  <td>
+                    <pre>{"<op1> != <op2>"}</pre>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
         </Section>
 
@@ -109,7 +130,7 @@ export default function Home() {
                   <td className="text-right">1</td>
                   <td>JPY 1,500</td>
                 </tr>
-                <tr>  
+                <tr>
                   <td><Link className="link" href={"https://techbookfest.org/event/tbf19"} target="_blank">技術書典19</Link></td>
                   <td>2025-11-16</td>
                   <td className="text-right">1</td>
