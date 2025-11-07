@@ -101,7 +101,7 @@ export function EventSchedule() {
 
         <div className="border border-neutral-400 p-2">
             <div className="font-bold text-xl">コミックマーケット107</div>
-            <div className="">2025-12-31 (水) / 審査中です</div>
+            <div className="">2025-12-31 (水) / 東京ビッグサイト / 南2ホール iブロック-19b</div>
 
             <div className="flex flex-wrap my-1 gap-2">
                 <Link className="link" href={"https://www.comiket.co.jp/info-a/C107/C107Info.html"} target="_blank">イベントの公式ページ</Link>
