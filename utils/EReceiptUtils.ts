@@ -2,7 +2,7 @@ export type Receipt = {
     id: string // UUIDv7 compatible string
     date: number // UNIX seconds
 
-    type: "PURCHASE" | "CANCEL"
+    type: "PURCHASE" | "RETURN"
     store: string
     event: string
     cashier: string

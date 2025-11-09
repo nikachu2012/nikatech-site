@@ -64,160 +64,180 @@ export default async function Home({ params }: {
             </pre>
         </main>
     }
-    else {
-        const receipt = JSON.parse(receiptStr) as Receipt
-        const header = receipt.header.split("\n")
-        const footer = receipt.footer.split("\n")
 
-    // Precompute assets list server-side to avoid async children inside JSX
-    const assetsElements: React.ReactElement[] = [];
-        for (const [itemIndex, item] of receipt.item.entries()) {
-            if (item.id.trim().startsWith("MANUAL_")) continue;
+    const receipt = JSON.parse(receiptStr) as Receipt
+    const header = receipt.header.split("\n")
+    const footer = receipt.footer.split("\n")
 
-            const r2list = await context.env.NIKATECH_ASSETS.list({ prefix: item.id.trim() + "/" });
+    if (receipt.type == "RETURN") {
+        // 返品済みの時
 
-            assetsElements.push(
-                <div key={itemIndex}>
-                    <div className="font-bold">{item.name} ({item.id})</div>
-                    <ul className="list-disc ml-5 font-mono text-sm">
-                        {r2list.objects.map((obj, keyIndex) => (
-                            <li key={keyIndex}>
-                                <a href={`/download/${encodeURIComponent(obj.key)}?receipt=${receipt.id.toLowerCase()}`}>
-                                    {obj.key.split("/")[1]}
-                                </a><br />
-                                <span className="font-mono text-xs">
-                                    Size: {obj.size} Bytes ({(obj.size / 1024 / 1024).toFixed(2)} MiB)
-                                </span><br />
-                            </li>
-                        ))}
-                    </ul>
+        return <main className="flex flex-col flex-wrap gap-6 py-4">
+            <Section title={"電子レシート"} id="payment">
+                <div className="bg-red-200 border border-red-400 p-2 rounded">
+                    この取引は返品済みです。
                 </div>
-            );
-        }
+            </Section>
 
-        return (
-            <main className="flex flex-col flex-wrap gap-6 py-4">
-                <Section title={"電子レシート"} id="payment">
-                    <div>
-                        電子版などファイルのダウンロードは<a href="#assets">こちら</a>から
-                    </div>
-
-                    <div className="mt-1">
-                        <span className="font-bold text-2xl">{receipt.store}</span><br />
-                        <span>{receipt.event}</span>
-                    </div>
-
-                    <div>
-                        <span>{header.map((e, i) => <span key={i}>{e}<br /></span>)}</span>
-                    </div>
-
-                    <div>
-                        <span>{GetDateISO8601String(new Date(receipt.date * 1000))}</span><br />
-                        <span>担当: {receipt.cashier}</span>
-                    </div>
-
-                    <table className="border-collapse w-full">
-                        <tbody>
-                            {receipt.item.map((item, index) => (
-                                <tr key={index} className="border-b border-gray-200">
-                                    <td className="p-2">
-                                        {item.id.trim().startsWith("MANUAL_") ? item.name : (
-                                            <Link href={`https://nikatech.nikachu.net/item/${item.id}`} target="_blank">
-                                                {item.name}
-                                            </Link>
-                                        )}
-                                    </td>
-                                    <td className="p-2 text-right">
-                                        <span>@{item.price.toLocaleString('ja-JP')} x {item.count}</span>
-                                        <div>JPY {(item.count * item.price).toLocaleString('ja-JP')}</div>
-                                    </td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                    <br />
-
-                    <table className="border-collapse">
-                        <tbody>
-                            <tr className="border-b border-gray-200">
-                                <td className="p-2">合計</td>
-                                <td className="p-2 text-right">JPY {receipt.sum.toLocaleString('ja-JP')}</td>
-                            </tr>
-                            <tr className="border-b border-gray-200">
-                                <td className="p-2">内消費税</td>
-                                <td className="p-2 text-right">JPY {Math.floor(receipt.sum - receipt.sum / 1.10).toLocaleString('ja-JP')}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <table className="border-collapse">
-                        <tbody>
-                            <tr className="border-b border-gray-200">
-                                <td className="p-2">支払い {paymentToReadableString(receipt.payment)}</td>
-                                <td className="p-2 text-right">JPY {receipt.paid.toLocaleString('ja-JP')}</td>
-                            </tr>
-                            <tr className="border-b border-gray-200">
-                                <td className="p-2">お釣り</td>
-                                <td className="p-2 text-right">JPY {(receipt.paid - receipt.sum).toLocaleString('ja-JP')}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    {receipt.pubPayData != undefined && receipt.pubPayData != null ?
-                        <>
-                            <div className="font-bold">{paymentToSlipString(receipt.payment)}</div>
-                            <table className="border-collapse">
-                                <tbody>
-                                    {receipt.pubPayData.split("\n").map((e, i) => {
-                                        const [key, value] = e.split("\t");
-                                        if (value == undefined){
-                                            return
-                                        }
-                                        else if (value == "") {
-                                            return <tr className="border-b border-gray-200" key={i}>
-                                                <td className="p-2" colSpan={2}>{key}</td>
-                                            </tr>
-                                        }
-                                        else {
-                                            return <tr className="border-b border-gray-200" key={i}>
-                                                <td className="p-2">{key}</td>
-                                                <td className="p-2 text-right">{value}</td>
-                                            </tr>
-                                        }
-                                    })}
-                                </tbody>
-                            </table>
-                        </>
-                        : <></>}
-
-
-                    <div>
-                        <span>{footer.map((e) => <>{e}<br /></>)}</span>
-                    </div>
-
-                    {receipt.receiptType != "NOTISSUE" ?
-                        <div className="bg-red-200 border border-red-400 p-2 rounded">
-                            この電子レシートの表示内容を正式な領収書として使用することはできません。経費計上に使用する場合は、紙のレシートまたは紙の領収書をご利用ください。
-                        </div> : <></>}
-
-                    <div className="bg-yellow-200 border border-yellow-400 p-2 rounded">
-                        電子レシートシステムは予告なく停止する可能性があります。あらかじめご了承ください。
-                    </div>
-                </Section>
-
-                <Section title={"ダウンロード可能なアセット"} id="assets">
-                    {assetsElements.length > 0 ? assetsElements : <div>ダウンロード可能なアセットはありません。</div>}
-                </Section>
-
-                <span className="font-mono text-sm text-neutral-400">
+            <pre className="font-mono text-sm text-neutral-400 whitespace-pre-wrap">
+                <code>
                     Tech info<br />
-                    Process date: {new Date().toString()}<br />
+                    Process date: {GetDateISO8601String(new Date())}<br />
                     Requested DB key: {slug.toUpperCase()}<br />
                     UUID validation: {uuidValidate(slug) ? "true" : " false"}<br />
                     UUID version: {uuidVersion(slug)}
-                </span>
-            </main>
+                </code>
+            </pre>
+        </main>
+    }
 
+    // Precompute assets list server-side to avoid async children inside JSX
+    const assetsElements: React.ReactElement[] = [];
+    for (const [itemIndex, item] of receipt.item.entries()) {
+        if (item.id.trim().startsWith("MANUAL_")) continue;
+
+        const r2list = await context.env.NIKATECH_ASSETS.list({ prefix: item.id.trim() + "/" });
+
+        assetsElements.push(
+            <div key={itemIndex}>
+                <div className="font-bold">{item.name} ({item.id})</div>
+                <ul className="list-disc ml-5 font-mono text-sm">
+                    {r2list.objects.map((obj, keyIndex) => (
+                        <li key={keyIndex}>
+                            <a href={`/download/${encodeURIComponent(obj.key)}?receipt=${receipt.id.toLowerCase()}`}>
+                                {obj.key.split("/")[1]}
+                            </a><br />
+                            <span className="font-mono text-xs">
+                                Size: {obj.size} Bytes ({(obj.size / 1024 / 1024).toFixed(2)} MiB)
+                            </span><br />
+                        </li>
+                    ))}
+                </ul>
+            </div>
         );
     }
+
+    return (
+        <main className="flex flex-col flex-wrap gap-6 py-4">
+            <Section title={"電子レシート"} id="payment">
+                <div>
+                    電子版などファイルのダウンロードは<a href="#assets">こちら</a>から
+                </div>
+
+                <div className="mt-1">
+                    <span className="font-bold text-2xl">{receipt.store}</span><br />
+                    <span>{receipt.event}</span>
+                </div>
+
+                <div>
+                    <span>{header.map((e, i) => <span key={i}>{e}<br /></span>)}</span>
+                </div>
+
+                <div>
+                    <span>{GetDateISO8601String(new Date(receipt.date * 1000))}</span><br />
+                    <span>担当: {receipt.cashier}</span>
+                </div>
+
+                <table className="border-collapse w-full">
+                    <tbody>
+                        {receipt.item.map((item, index) => (
+                            <tr key={index} className="border-b border-gray-200">
+                                <td className="p-2">
+                                    {item.id.trim().startsWith("MANUAL_") ? item.name : (
+                                        <Link href={`https://nikatech.nikachu.net/item/${item.id}`} target="_blank">
+                                            {item.name}
+                                        </Link>
+                                    )}
+                                </td>
+                                <td className="p-2 text-right">
+                                    <span>@{item.price.toLocaleString('ja-JP')} x {item.count}</span>
+                                    <div>JPY {(item.count * item.price).toLocaleString('ja-JP')}</div>
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+                <br />
+
+                <table className="border-collapse">
+                    <tbody>
+                        <tr className="border-b border-gray-200">
+                            <td className="p-2">合計</td>
+                            <td className="p-2 text-right">JPY {receipt.sum.toLocaleString('ja-JP')}</td>
+                        </tr>
+                        <tr className="border-b border-gray-200">
+                            <td className="p-2">内消費税</td>
+                            <td className="p-2 text-right">JPY {Math.floor(receipt.sum - receipt.sum / 1.10).toLocaleString('ja-JP')}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table className="border-collapse">
+                    <tbody>
+                        <tr className="border-b border-gray-200">
+                            <td className="p-2">支払い {paymentToReadableString(receipt.payment)}</td>
+                            <td className="p-2 text-right">JPY {receipt.paid.toLocaleString('ja-JP')}</td>
+                        </tr>
+                        <tr className="border-b border-gray-200">
+                            <td className="p-2">お釣り</td>
+                            <td className="p-2 text-right">JPY {(receipt.paid - receipt.sum).toLocaleString('ja-JP')}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                {receipt.pubPayData != undefined && receipt.pubPayData != null ?
+                    <>
+                        <div className="font-bold">{paymentToSlipString(receipt.payment)}</div>
+                        <table className="border-collapse">
+                            <tbody>
+                                {receipt.pubPayData.split("\n").map((e, i) => {
+                                    const [key, value] = e.split("\t");
+                                    if (value == undefined) {
+                                        return
+                                    }
+                                    else if (value == "") {
+                                        return <tr className="border-b border-gray-200" key={i}>
+                                            <td className="p-2" colSpan={2}>{key}</td>
+                                        </tr>
+                                    }
+                                    else {
+                                        return <tr className="border-b border-gray-200" key={i}>
+                                            <td className="p-2">{key}</td>
+                                            <td className="p-2 text-right">{value}</td>
+                                        </tr>
+                                    }
+                                })}
+                            </tbody>
+                        </table>
+                    </>
+                    : <></>}
+
+
+                <div>
+                    <span>{footer.map((e) => <>{e}<br /></>)}</span>
+                </div>
+
+                {receipt.receiptType != "NOTISSUE" ?
+                    <div className="bg-red-200 border border-red-400 p-2 rounded">
+                        この電子レシートの表示内容を正式な領収書として使用することはできません。経費計上に使用する場合は、紙のレシートまたは紙の領収書をご利用ください。
+                    </div> : <></>}
+
+                <div className="bg-yellow-200 border border-yellow-400 p-2 rounded">
+                    電子レシートシステムは予告なく停止する可能性があります。あらかじめご了承ください。
+                </div>
+            </Section>
+
+            <Section title={"ダウンロード可能なアセット"} id="assets">
+                {assetsElements.length > 0 ? assetsElements : <div>ダウンロード可能なアセットはありません。</div>}
+            </Section>
+
+            <span className="font-mono text-sm text-neutral-400">
+                Tech info<br />
+                Process date: {new Date().toString()}<br />
+                Requested DB key: {slug.toUpperCase()}<br />
+                UUID validation: {uuidValidate(slug) ? "true" : " false"}<br />
+                UUID version: {uuidVersion(slug)}
+            </span>
+        </main>
+    );
 }

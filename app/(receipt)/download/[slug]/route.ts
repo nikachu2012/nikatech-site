@@ -39,6 +39,15 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
     }
     const receipt = JSON.parse(receiptStr) as Receipt
 
+    // 取引が返品済みでないか
+    if (receipt.type != "PURCHASE") {
+        const response = {
+            status: false,
+            reason: "Your receipt is already cancelled."
+        }
+        return new NextResponse(JSON.stringify(response), { status: 403, headers: { "Content-Type": "application/json" } });
+    }
+
     // 指定idの商品を購入しているか
     const itemelement = receipt.item.find(e => e.id === categoryId)
     if (!itemelement || itemelement.count <= 0) {
