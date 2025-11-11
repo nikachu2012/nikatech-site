@@ -58,7 +58,9 @@ export function NewReleaseList() {
         </ul> */}
 
         <div className="flex justify-center">
-            <Image src={newRelease} alt={"技術書典18の新刊"} width={500} className="shadow" />
+            <Link href={newRelease.src}>
+                <Image src={newRelease} alt={"技術書典19の新刊"} width={800} className="border border-neutral-300" />
+            </Link>
         </div>
     </>
 }
