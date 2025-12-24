@@ -13,26 +13,35 @@ export function EventSchedule() {
             </div>
 
             <div>
-                <tr>
-                    <td className="border border-neutral-400 p-1 px-2">新刊</td>
-                    <td className="border border-neutral-400 p-1 px-2"><Link className="link" href={"/item/llvm_homebrew_lang"}>LLVMで作るプログラミング言語</Link></td>
-                    <td className="border border-neutral-400 p-1 px-2 text-right">JPY 1,500</td>
-                </tr>
-                <tr>
-                    <td className="border border-neutral-400 p-1 px-2">新刊</td>
-                    <td className="border border-neutral-400 p-1 px-2"><Link className="link" href={"/item/howto_isdn"}>ISDNを正しく表記してガチの本みたいな同人誌を作ろう</Link></td>
-                    <td className="border border-neutral-400 p-1 px-2 text-right">JPY 100</td>
-                </tr>
-                <tr>
-                    <td className="border border-neutral-400 p-1 px-2">既刊</td>
-                    <td className="border border-neutral-400 p-1 px-2"><Link className="link" href={"/item/avrasm"}>Arduinoで始めるアセンブリ</Link></td>
-                    <td className="border border-neutral-400 p-1 px-2 text-right">JPY 500</td>
-                </tr>
-                <tr>
-                    <td className="border border-neutral-400 p-1 px-2">既刊</td>
-                    <td className="border border-neutral-400 p-1 px-2"><Link className="link" href={"/item/smartremote_guide"}>スマートリモコン自作ガイド</Link></td>
-                    <td className="border border-neutral-400 p-1 px-2 text-right">JPY 500</td>
-                </tr>
+                <table className="border-collapse mt-1 table-auto">
+                    <thead>
+                        <tr>
+                            <th className="border border-neutral-400 p-1 px-2">種別</th>
+                            <th className="border border-neutral-400 p-1 px-2">商品名</th>
+                            <th className="border border-neutral-400 p-1 px-2">値段</th>
+                        </tr>
+                    </thead>
+                    <tr>
+                        <td className="border border-neutral-400 p-1 px-2">新刊</td>
+                        <td className="border border-neutral-400 p-1 px-2"><Link className="link" href={"/item/llvm_homebrew_lang"}>LLVMで作るプログラミング言語</Link></td>
+                        <td className="border border-neutral-400 p-1 px-2 text-right">JPY 1,500</td>
+                    </tr>
+                    <tr>
+                        <td className="border border-neutral-400 p-1 px-2">新刊</td>
+                        <td className="border border-neutral-400 p-1 px-2"><Link className="link" href={"/item/howto_isdn"}>ISDNを正しく表記してガチの本みたいな同人誌を作ろう</Link></td>
+                        <td className="border border-neutral-400 p-1 px-2 text-right">JPY 100</td>
+                    </tr>
+                    <tr>
+                        <td className="border border-neutral-400 p-1 px-2">既刊</td>
+                        <td className="border border-neutral-400 p-1 px-2"><Link className="link" href={"/item/avrasm"}>Arduinoで始めるアセンブリ</Link></td>
+                        <td className="border border-neutral-400 p-1 px-2 text-right">JPY 500</td>
+                    </tr>
+                    <tr>
+                        <td className="border border-neutral-400 p-1 px-2">既刊</td>
+                        <td className="border border-neutral-400 p-1 px-2"><Link className="link" href={"/item/smartremote_guide"}>スマートリモコン自作ガイド</Link></td>
+                        <td className="border border-neutral-400 p-1 px-2 text-right">JPY 500</td>
+                    </tr>
+                </table>
             </div>
         </div>
     </>
