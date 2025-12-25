@@ -25,7 +25,7 @@ export default function Home() {
 
         <Section title={"サークル紹介"} id="circle">
           <p>
-            コンピュータや、プログラミング関連の技術の本を書く同人サークルです。サークルといっても一人です。<Link className="link" href={"https://portfolio.nikachu.net"} target="_blank">サークル主のプロフィール</Link><br />
+            コンピュータや、プログラミング関連の本を書く同人サークルです。サークルといっても一人です。<Link className="link" href={"https://portfolio.nikachu.net"} target="_blank">サークル主のプロフィール</Link><br />
             よくWeb系や、C/C++言語を書くのでその関連の話が多くなると思いますが、あまりジャンルを限定せず興味を持ったものは色々扱います。<br />
           </p>
 
