@@ -2,7 +2,10 @@ import Link from "next/link";
 
 export function EventSchedule() {
     return <>
-        <div className="border border-neutral-400 p-2">
+        <div>
+            参加予定イベントはありません。イベント参加履歴については<Link href={"/event"} className="link">こちら</Link>をご覧ください。
+        </div>
+        {/* <div className="border border-neutral-400 p-2">
             <div className="font-bold text-xl">コミックマーケット107</div>
             <div className="">2025-12-31 (水) / 東京ビッグサイト / 南2 i-19b</div>
             <div className="text-red-600">サークル代表は、体調不良のため出展場所にはいません。大変申し訳ありません。</div>
@@ -43,6 +46,6 @@ export function EventSchedule() {
                     </tr>
                 </table>
             </div>
-        </div>
+        </div> */}
     </>
 }
