@@ -46,7 +46,7 @@ export default function Home() {
             <ul className="list-disc ml-6">
               <li>端末はSquare Terminal (1st Gen, v2)です。</li>
               <li>ご指定いただければ、Miura M010（Airペイ）もご利用いただけます。サークル代表がいる際にお声がけください。</li>
-              <li>iPhone, Android端末でのTap to Payもご利用になれます（QuickPassは除く）。サークル代表がいる際にお声がけください。</li>
+              <li>iPhone, Android端末でのTap to Payもご利用になれます（QuickPassも多分使えます）。サークル代表がいる際にお声がけください。</li>
               {/* <li>本人確認として暗証番号を求められた場合は、必ずご入力ください。</li> */}
             </ul>
           </div>
