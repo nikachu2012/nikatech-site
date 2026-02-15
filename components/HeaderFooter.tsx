@@ -80,6 +80,7 @@ export default function HeaderFooter({ children }: { children: ReactNode }) {
                     <FooterLink href="/payment">お支払い</FooterLink>
                     <FooterLink href="/item">頒布品</FooterLink>
                     <FooterLink href="/contact">お問い合わせ</FooterLink>
+                    <FooterLink href="/announcement">お知らせ</FooterLink>
                     <FooterLink href="/forclerk">売り子の方へ</FooterLink>
                 </div>
 
