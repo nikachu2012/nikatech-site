@@ -2,21 +2,23 @@ import Link from "next/link";
 
 export function EventSchedule() {
     return <>
-        <div>
+        {/* <div>
             参加予定イベントはありません。イベント参加履歴については<Link href={"/event"} className="link">こちら</Link>をご覧ください。
-        </div>
-        {/* <div className="border border-neutral-400 p-2">
-            <div className="font-bold text-xl">コミックマーケット107</div>
-            <div className="">2025-12-31 (水) / 東京ビッグサイト / 南2 i-19b</div>
-            <div className="text-red-600">サークル代表は、体調不良のため出展場所にはいません。大変申し訳ありません。</div>
+        </div> */}
+        <div className="border border-neutral-400 p-2">
+            <div className="font-bold text-xl">技術書典20 オンライン＋オフライン</div>
+            <div className="">2026-04-12 (日) / 池袋・サンシャインシティ 文化会館ビル2F 展示ホールD / 配置未定</div>
+            <div className="text-red-600">サークル代表の体調不良のため欠席するかもしれません。許してね</div>
 
             <div className="flex flex-wrap my-1 gap-2">
-                <Link className="link" href={"https://www.comiket.co.jp/info-a/C107/C107Info.html"} target="_blank">イベントの公式ページ</Link>
-                <Link className="link" href={"https://webcatalog.circle.ms/Perma/Circle/10507495/"} target="_blank">サークルページ</Link>
+                <Link className="link" href={"https://techbookfest.org/event/tbf20"} target="_blank">イベントの公式ページ</Link>
+                <Link className="link" href={"https://techbookfest.org/organization/KdLZ1mQYzBTzyyz68x2UX"} target="_blank">サークルページ</Link>
             </div>
 
+
             <div>
-                <table className="border-collapse mt-1 table-auto">
+                頒布品未定（新刊は２冊を予定しています。またスマートリモコン自作ガイドについては電子版のみの販売となる予定です。）
+                {/* <table className="border-collapse mt-1 table-auto">
                     <thead>
                         <tr>
                             <th className="border border-neutral-400 p-1 px-2">種別</th>
@@ -44,8 +46,8 @@ export function EventSchedule() {
                         <td className="border border-neutral-400 p-1 px-2"><Link className="link" href={"/item/smartremote_guide"}>スマートリモコン自作ガイド</Link></td>
                         <td className="border border-neutral-400 p-1 px-2 text-right">JPY 500</td>
                     </tr>
-                </table>
+                </table> */}
             </div>
-        </div> */}
+        </div>
     </>
 }
