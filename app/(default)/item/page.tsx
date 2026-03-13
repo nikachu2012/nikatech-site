@@ -32,6 +32,8 @@ export default function Home() {
                     <h3 className="font-bold">既刊</h3>
                     <ul className="list-disc list-outside ml-6">
                         {/* 既刊なんかねーよ　うるせえよ　黙れよ */}
+                        <li><Link className="link" href={"item/howto_isdn"}>ISDNを正しく表記してガチの本みたいな同人誌を作ろう</Link></li>
+                        <li><Link className="link" href={"item/llvm_homebrew_lang"}>LLVMで作るプログラミング言語</Link></li>
                         <li><Link className="link" href={"item/avrasm"}>Arduinoで始めるアセンブリ</Link></li>
                         <li><Link className="link" href={"item/smartremote_guide"}>スマートリモコン自作ガイド</Link></li>
                         <li><Link className="link" href={"item/unicode_animal_paper"}>Unicode 動物絵文字 コードポイント表</Link></li>
