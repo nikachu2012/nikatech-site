@@ -7,7 +7,7 @@ export function EventSchedule() {
         </div> */}
         <div className="border border-neutral-400 p-2">
             <div className="font-bold text-xl">技術書典20 オンライン＋オフライン</div>
-            <div className="">2026-04-12 (日) / 池袋・サンシャインシティ 文化会館ビル2F 展示ホールD / 配置未定</div>
+            <div className="">2026-04-12 (日) / 池袋・サンシャインシティ 文化会館ビル2F 展示ホールD / <b>あ01</b></div>
             <div className="text-red-600">サークル代表の体調不良のため欠席するかもしれません。許してね</div>
 
             <div className="flex flex-wrap my-1 gap-2">
