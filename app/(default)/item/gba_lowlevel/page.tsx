@@ -48,7 +48,7 @@ export default function Home() {
                 </tr>
                 <tr>
                   <td>ISDN（Cコード）</td>
-                  <td className="font-mono">ISDN278-4-874195-01-4 (C3055)</td>
+                  <td className="font-mono">ISDN278-4-874195-04-5 (C3055)</td>
                 </tr>
                 <tr>
                   <td>サイズ</td>
