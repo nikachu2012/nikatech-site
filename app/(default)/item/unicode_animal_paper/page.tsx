@@ -82,7 +82,7 @@ export default function Home() {
         </Section>
 
 
-        <Section title={"頒布履歴"}>
+        {/* <Section title={"頒布履歴"}>
 
           <div>
             <table className="border-collapse border border-neutral-300">
@@ -147,7 +147,7 @@ export default function Home() {
               </tbody>
             </table>
           </div>
-        </Section>
+        </Section> */}
       </main>
     </HeaderFooter>
   );
