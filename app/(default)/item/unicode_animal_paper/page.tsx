@@ -8,7 +8,7 @@ import Link from "next/link";
 import HeaderFooter from "@/components/HeaderFooter";
 
 export const metadata: Metadata = {
-  title: 'スマートリモコン自作ガイド',
+  title: 'Unicode 動物絵文字 コードポイント表',
 }
 
 export default function Home() {
