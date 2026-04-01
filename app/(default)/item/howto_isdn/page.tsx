@@ -64,6 +64,9 @@ export default function Home() {
             <Link className="link" href={"https://techbookfest.org/product/3r9gDwPqpXb8TrWwQeN1Tc"} target="_blank">
               技術書典の頒布ページはこちら
             </Link><br />
+            <Link className="link" href={"https://nikatech.booth.pm/items/7648770"} target="_blank">
+              BOOTHの頒布ページはこちら
+            </Link><br />
           </div>
         </Section>
 
