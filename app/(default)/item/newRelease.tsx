@@ -4,6 +4,7 @@ import Link from "next/link";
 
 import gba_lowlevel_thumb from "./gba_lowlevel/thumb.png"
 import doujin_pos_cashless_thumb from "./doujin_pos_cashless/thumb.png"
+import gba_bootcable_thumb from "./gba_bootcable/thumb.jpg"
 
 function NewReleaseItem(props: { name: string, price: number, thumb: string | StaticImageData, detailPageRef: string, detail: string }) {
     const { name, price, thumb, detailPageRef, detail } = props;
@@ -45,6 +46,13 @@ export function NewReleaseList() {
                 thumb={doujin_pos_cashless_thumb}
                 detailPageRef={"item/doujin_pos_cashless"}
                 detail={"JIS B5 / 42p / 本文モノクロ"}
+            />
+            <NewReleaseItem
+                name={"GBAブートケーブル"}
+                price={1000}
+                thumb={gba_bootcable_thumb}
+                detailPageRef={"item/gba_bootcable"}
+                detail={"ケーブル長 約50cm"}
             />
             {/* <NewReleaseItem name={"Arduinoで始めるアセンブリ"} price={500} thumb={avrasm_thumb} detailPageRef={"item/avrasm"} detail={"JIS B5 / 50p / 本文モノクロ"} /> */}
         </div>
