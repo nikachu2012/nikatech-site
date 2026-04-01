@@ -8,7 +8,7 @@ import Link from "next/link";
 import HeaderFooter from "@/components/HeaderFooter";
 
 export const metadata: Metadata = {
-  title: 'スマートリモコン自作ガイド',
+  title: 'ISDNを正しく表記してガチの本みたいな同人誌を作ろう',
 }
 
 export default function Home() {
