@@ -17,8 +17,8 @@ export function EventSchedule() {
 
 
             <div>
-                頒布品未定（新刊は２冊を予定しています。またスマートリモコン自作ガイドについては電子版のみの販売となる予定です。）
-                {/* <table className="border-collapse mt-1 table-auto">
+                {/* 頒布品未定（新刊は２冊を予定しています。またスマートリモコン自作ガイドについては電子版のみの販売となる予定です。） */}
+                <table className="border-collapse mt-1 table-auto">
                     <thead>
                         <tr>
                             <th className="border border-neutral-400 p-1 px-2">種別</th>
@@ -28,11 +28,26 @@ export function EventSchedule() {
                     </thead>
                     <tr>
                         <td className="border border-neutral-400 p-1 px-2">新刊</td>
-                        <td className="border border-neutral-400 p-1 px-2"><Link className="link" href={"/item/llvm_homebrew_lang"}>LLVMで作るプログラミング言語</Link></td>
+                        <td className="border border-neutral-400 p-1 px-2"><Link className="link" href={"/item/gba_lowlevel"}>GBAで学ぶ低レイヤー</Link></td>
                         <td className="border border-neutral-400 p-1 px-2 text-right">JPY 1,500</td>
                     </tr>
                     <tr>
                         <td className="border border-neutral-400 p-1 px-2">新刊</td>
+                        <td className="border border-neutral-400 p-1 px-2"><Link className="link" href={"/item/doujin_pos_cashless"}>スマート頒布 〜同人誌即売会に自作POSとキャッシュレス決済を入れてみた〜</Link></td>
+                        <td className="border border-neutral-400 p-1 px-2 text-right">JPY 500</td>
+                    </tr>
+                    <tr>
+                        <td className="border border-neutral-400 p-1 px-2">新商品</td>
+                        <td className="border border-neutral-400 p-1 px-2"><Link className="link" href={"/item/gba_bootcable"}>GBAブートケーブル</Link></td>
+                        <td className="border border-neutral-400 p-1 px-2 text-right">JPY 1,000</td>
+                    </tr>
+                    <tr>
+                        <td className="border border-neutral-400 p-1 px-2">既刊</td>
+                        <td className="border border-neutral-400 p-1 px-2"><Link className="link" href={"/item/llvm_homebrew_lang"}>LLVMで作るプログラミング言語</Link></td>
+                        <td className="border border-neutral-400 p-1 px-2 text-right">JPY 1,500</td>
+                    </tr>
+                    <tr>
+                        <td className="border border-neutral-400 p-1 px-2">既刊</td>
                         <td className="border border-neutral-400 p-1 px-2"><Link className="link" href={"/item/howto_isdn"}>ISDNを正しく表記してガチの本みたいな同人誌を作ろう</Link></td>
                         <td className="border border-neutral-400 p-1 px-2 text-right">JPY 100</td>
                     </tr>
@@ -43,10 +58,10 @@ export function EventSchedule() {
                     </tr>
                     <tr>
                         <td className="border border-neutral-400 p-1 px-2">既刊</td>
-                        <td className="border border-neutral-400 p-1 px-2"><Link className="link" href={"/item/smartremote_guide"}>スマートリモコン自作ガイド</Link></td>
+                        <td className="border border-neutral-400 p-1 px-2"><Link className="link" href={"/item/smartremote_guide"}>スマートリモコン自作ガイド</Link><b>（電子版のみ）</b></td>
                         <td className="border border-neutral-400 p-1 px-2 text-right">JPY 500</td>
                     </tr>
-                </table> */}
+                </table>
             </div>
         </div>
     </>
