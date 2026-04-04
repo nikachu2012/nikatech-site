@@ -98,6 +98,9 @@ export default async function Home({ params }: {
 
         const r2list = await context.env.NIKATECH_ASSETS.list({ prefix: item.id.trim() + "/" });
 
+        // R2にデータがない時は飛ばす
+        if (r2list.objects.length == 0) continue;
+
         assetsElements.push(
             <div key={itemIndex}>
                 <div className="font-bold">{item.name} ({item.id})</div>
