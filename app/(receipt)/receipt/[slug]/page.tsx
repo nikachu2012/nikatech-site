@@ -10,7 +10,7 @@ import { validate as uuidValidate } from 'uuid';
 import Link from "next/link";
 import GetDateISO8601String from "@/utils/GetDateISO8601String";
 import { paymentToReadableString, paymentToSlipString, Receipt } from "@/utils/EReceiptUtils";
-import { uuidValidateV7 } from "@/utils/uuidUtils";
+import { getUnixTimeFromUuidV7, uuidValidateV7 } from "@/utils/uuidUtils";
 
 export const metadata: Metadata = {
     title: '電子レシート',
@@ -127,14 +127,29 @@ export default async function Home({ params }: {
                     電子版などファイルのダウンロードは<a href="#assets">こちら</a>から
                 </div>
 
-                <div className="mt-1">
-                    <span className="font-bold text-2xl">{receipt.store}</span><br />
-                    <span>{receipt.event}</span>
-                </div>
 
-                <div>
-                    <span>{header.map((e, i) => <span key={i}>{e}<br /></span>)}</span>
-                </div>
+                {
+                    getUnixTimeFromUuidV7(slug) < 1775311453000 ?
+                        <>
+                            <div className="mt-1">
+                                <span className="font-bold text-2xl">{receipt.store}</span><br />
+                                <span>{receipt.event}</span>
+                            </div>
+
+                            <div>
+                                <span>{header.map((e, i) => <span key={i}>{e}<br /></span>)}</span>
+                            </div>
+                        </> : <>
+                            <div className="mt-1">
+                                <span className="font-bold">{receipt.store}@{receipt.event}</span><br />
+                                {header.map((e, i) => <span key={i}>{e}<br /></span>)}
+                            </div>
+
+                            <div>
+                                <span>お買い上げありがとうございます。</span>
+                            </div>
+                        </>
+                }
 
                 <div>
                     <span>{GetDateISO8601String(new Date(receipt.date * 1000))}</span><br />
