@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>頒布データダッシュボード</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px; /* 文字が見切れないようにコンテナ幅を拡大 */
+            margin: 0 auto;
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h1, h2 { color: #2c3e50; }
+        textarea {
+            width: 100%; height: 80px; padding: 10px;
+            border: 1px solid #ccc; border-radius: 4px;
+            font-family: monospace; box-sizing: border-box; resize: vertical;
+        }
+        button {
+            margin-top: 10px; padding: 10px 20px; background-color: #3498db;
+            color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 16px;
+        }
+        button:hover { background-color: #2980b9; }
+        .summary-cards { display: flex; gap: 20px; margin-top: 20px; }
+        .card { flex: 1; background-color: #ecf0f1; padding: 20px; border-radius: 8px; text-align: center; }
+        .card h3 { margin: 0 0 10px 0; font-size: 14px; color: #7f8c8d; }
+        .card p { margin: 0; font-size: 24px; font-weight: bold; color: #2c3e50; }
+        .dashboard-row { display: flex; gap: 20px; margin-top: 30px; justify-content: center;}
+        /* グラフの高さを指定し、レイアウトを安定させます */
+        .chart-container { width: 100%; max-width: 900px; height: 500px; position: relative; } 
+        .table-container { margin-top: 30px; overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 12px; border-bottom: 1px solid #ddd; text-align: left; }
+        th { background-color: #f8f9fa; color: #333; }
+        .type-purchase { color: #27ae60; font-weight: bold; }
+        .type-return { color: #c0392b; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>頒布データダッシュボード</h1>
+    <textarea id="jsonInput">
+{"itemCount":{"gba_lowlevel":1,"doujin_pos_cashless":1},"transactions":[],"transactionCount":10,"date":1775365763,"sumPrice":109600,"paymentSum":{"TECHBOOKFEST":86000, "CREDIT_SQ":19100, "CASH":4500, "ID_SQ":4000, "TRANSPORTATION_IC_SQ":1500, "CREDIT_SQ_MS":500, "BARCODE_AIRPAY":500, "CREDIT_AIRPAY":500}}
+    </textarea>
+    <button onclick="processData()">データを読み込む</button>
+
+    <div class="summary-cards">
+        <div class="card">
+            <h3>総売上金額</h3>
+            <p id="sumPriceText">¥0</p>
+        </div>
+        <div class="card">
+            <h3>取引件数</h3>
+            <p id="transactionCountText">0 件</p>
+        </div>
+    </div>
+
+    <div class="dashboard-row">
+        <div class="chart-container">
+            <canvas id="paymentChart"></canvas>
+        </div>
+    </div>
+
+    <div class="table-container">
+        <h2>取引履歴</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>日時</th><th>種類</th><th>決済方法</th><th>金額</th><th>頒布物 (数量)</th>
+                </tr>
+            </thead>
+            <tbody id="transactionTableBody"></tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    let paymentChartInstance = null;
+
+    const paymentMap = {
+        "CASH": "現金", "CREDIT": "国際ブランド", "BARCODE": "1,2次元コード",
+        "TECHBOOKFEST": "技術書典公式後払い", "CREDIT_AIRPAY": "クレジット(Airペイ)",
+        "CREDIT_AIRPAY_TOUCH": "クレ(Airペイタッチ)", "CREDIT_UNIONPAY_AIRPAY": "銀聯(Airペイ)",
+        "BARCODE_AIRPAY": "QRコード(Airペイ)", "QUICPAY_AIRPAY": "QUICPay+(Airペイ)",
+        "BARCODE_AIRPAYQR": "QRコード(AirQR)", "CREDIT_SQ": "クレジット(Square)",
+        "ID_SQ": "iD(Square)", "QUICPAY_SQ": "QUICPay+(Square)",
+        "TRANSPORTATION_IC_SQ": "交通系IC(Square)", "BARCODE_SQ": "QRコード(Square)",
+        "CREDIT_SQ_MN": "クレ(Square MN)", "CREDIT_SQ_MS": "クレ(Sq MSリーダ)",
+        "CREDIT_SQ_IPHONE": "クレ(Sq Tap to Pay iPhone)", "CREDIT_SQ_ANDROID": "クレ(Sq Tap to Pay Android)",
+        "GIFTCARD_SQ": "ギフトカード(Square)"
+    };
+
+    function translatePaymentID(paymentId) { return paymentMap[paymentId] || paymentId; }
+    function formatUnixTime(unixTime) { return new Date(unixTime * 1000).toLocaleString('ja-JP'); }
+
+    function processData() {
+        const inputStr = document.getElementById('jsonInput').value;
+        try {
+            const data = JSON.parse(inputStr);
+            renderDashboard(data);
+        } catch (e) { alert('JSONの解析に失敗しました。\nエラー: ' + e.message); }
+    }
+
+    function renderDashboard(data) {
+        document.getElementById('sumPriceText').textContent = `¥${data.sumPrice.toLocaleString()}`;
+        document.getElementById('transactionCountText').textContent = `${data.transactionCount} 件`;
+        renderChart(data.paymentSum);
+        renderTable(data.transactions);
+    }
+
+    // ★ 重なり防止＆パーセント表示対応のカスタムプラグイン ★
+    const leaderLinePlugin = {
+        id: 'leaderLine',
+        afterDraw(chart) {
+            const ctx = chart.ctx;
+            const dataset = chart.data.datasets[0];
+            const meta = chart.getDatasetMeta(0);
+
+            // 全体の合計値を計算（パーセンテージ算出用）
+            const total = dataset.data.reduce((sum, val) => sum + val, 0);
+
+            // 左右それぞれの「直前に描画したラベルのY座標」を記憶する変数
+            let prevRightY = -Infinity;
+            let prevLeftY = Infinity;
+            const MIN_Y_DIFF = 20; // 最低限空ける縦幅（ピクセル）。文字が重なる場合はここを増やします
+
+            meta.data.forEach((arc, index) => {
+                const value = dataset.data[index];
+                if (value === 0) return;
+
+                const centerX = arc.x;
+                const centerY = arc.y;
+                // 円弧の中心角度を取得（Chart.jsでは -π/2 が頂点）
+                const angle = (arc.startAngle + arc.endAngle) / 2;
+                
+                // 角度を元に右半球か左半球かを判定
+                const isRight = angle >= -Math.PI / 2 && angle < Math.PI / 2;
+
+                const radius = arc.outerRadius;
+                
+                // 線の始点（円弧の縁）
+                const startX = centerX + Math.cos(angle) * radius;
+                const startY = centerY + Math.sin(angle) * radius;
+
+                // 線の折れ曲がり地点（ベース）
+                let elbowX = centerX + Math.cos(angle) * (radius + 20);
+                let elbowY = centerY + Math.sin(angle) * (radius + 20);
+
+                // --- 衝突判定＆Y座標の調整 ---
+                if (isRight) {
+                    // 右側は上から下へ描画されるため、前のラベルより下になるようにする
+                    if (elbowY < prevRightY + MIN_Y_DIFF) {
+                        elbowY = prevRightY + MIN_Y_DIFF;
+                    }
+                    prevRightY = elbowY;
+                } else {
+                    // 左側は下から上へ描画されるため、前のラベルより上になるようにする
+                    if (elbowY > prevLeftY - MIN_Y_DIFF) {
+                        elbowY = prevLeftY - MIN_Y_DIFF;
+                    }
+                    prevLeftY = elbowY;
+                }
+
+                // 水平線の終点
+                const endX = isRight ? elbowX + 30 : elbowX - 30;
+
+                // 線の描画
+                ctx.beginPath();
+                ctx.moveTo(startX, startY);
+                ctx.lineTo(elbowX, elbowY); // 調整された高さへ斜めに引く
+                ctx.lineTo(endX, elbowY);   // 水平に引く
+                ctx.strokeStyle = dataset.backgroundColor[index % dataset.backgroundColor.length];
+                ctx.lineWidth = 1.5;
+                ctx.stroke();
+
+                // テキストの描画（パーセンテージ計算）
+                const percentage = ((value / total) * 100).toFixed(1);
+                const label = chart.data.labels[index];
+                const text = `${label} (${percentage}%)`;
+
+                ctx.font = 'bold 12px "Helvetica Neue", sans-serif';
+                ctx.fillStyle = '#333';
+                ctx.textBaseline = 'middle';
+                ctx.textAlign = isRight ? 'left' : 'right';
+                ctx.fillText(text, isRight ? endX + 5 : endX - 5, elbowY);
+            });
+        }
+    };
+
+    function renderChart(paymentSum) {
+        const ctx = document.getElementById('paymentChart').getContext('2d');
+        if (paymentChartInstance) { paymentChartInstance.destroy(); }
+
+        const labels = Object.keys(paymentSum).map(translatePaymentID);
+        const dataValues = Object.values(paymentSum);
+        
+        // 色を見分けやすくするため明度や彩度をばらけさせたカラーパレット
+        const bgColors = [
+            '#4fc3f7', '#ff8a65', '#ba68c8', '#e57373', '#aed581', 
+            '#ffd54f', '#4dd0e1', '#f06292', '#7986cb', '#81c784',
+            '#dce775', '#ffb74d', '#a1887f', '#90a4ae', '#f48fb1',
+            '#80cbc4', '#ce93d8', '#bcaaa4', '#eeeeee', '#ffcc80'
+        ];
+
+        paymentChartInstance = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: labels,
+                datasets: [{
+                    data: dataValues,
+                    backgroundColor: bgColors.slice(0, labels.length),
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                layout: {
+                    // 左右のパディングを大幅に増やし、文字が見切れるのを防ぎます
+                    padding: { left: 220, right: 220, top: 100, bottom: 40 }
+                },
+                plugins: {
+                    legend: { display: false },
+                    // title: {
+                    //     display: true,
+                    //     text: '決済方法別 売上割合',
+                    //     font: { size: 16 }
+                    // }
+                }
+            },
+            plugins: [leaderLinePlugin]
+        });
+    }
+
+    function renderTable(transactions) {
+        const tbody = document.getElementById('transactionTableBody');
+        tbody.innerHTML = ''; 
+        if(!transactions || transactions.length === 0) return;
+        const sortedTransactions = transactions.sort((a, b) => b.date - a.date);
+
+        sortedTransactions.forEach(tx => {
+            const tr = document.createElement('tr');
+            const itemNames = tx.item ? tx.item.map(i => `${i.name} (x${i.count})`).join('<br>') : '';
+            let typeLabel = tx.type === 'PURCHASE' ? '<span class="type-purchase">購入</span>' : 
+                            tx.type === 'RETURN' ? '<span class="type-return">返品</span>' : tx.type;
+            let sumDisplay = tx.type === 'RETURN' ? `-¥${tx.sum.toLocaleString()}` : `¥${tx.sum.toLocaleString()}`;
+
+            tr.innerHTML = `
+                <td>${formatUnixTime(tx.date)}</td>
+                <td>${typeLabel}</td>
+                <td>${translatePaymentID(tx.payment)}</td>
+                <td>${sumDisplay}</td>
+                <td>${itemNames}</td>
+            `;
+            tbody.appendChild(tr);
+        });
+    }
+
+    window.onload = () => { processData(); };
+</script>
+
+</body>
+</html>
