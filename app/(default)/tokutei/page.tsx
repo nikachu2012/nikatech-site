@@ -41,7 +41,7 @@ export default function Home() {
                             <tr>
                                 <td className="border border-neutral-400 p-1 px-2">代金の支払い時期</td>
                                 <td className="border border-neutral-400 p-1 px-2">
-                                    ＜１回限りの寄付＞<br />
+                                    ＜サブスクリプション＞<br />
                                     初回： 申込み（購入）時に決済。<br />
                                     2回目以降（月払い）： 毎月、初回申込み日と同日に自動決済（例：1月15日に申し込んだ場合、毎月15日）。申込日と同日が存在しない月の場合はその月の最終日に決済されます。<br />
                                     2回目以降（年払い）： 毎年、初回申込み日と同日に自動決済。<br />
