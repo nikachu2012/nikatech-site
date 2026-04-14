@@ -79,6 +79,7 @@ export default function Home() {
           <div>
             <ul className="list-disc ml-6">
               <li className=""><Link className="link" href={"/acceptance/acceptance_20250601_tbf18.pdf"}>技術書典18（2025/06/01）</Link></li>
+              <li className=""><Link className="link" href={"/acceptance/acceptance_20260412_tbf20.pdf"}>技術書典20（2026/04/12）</Link></li>
             </ul>
           </div>
         </Section>
