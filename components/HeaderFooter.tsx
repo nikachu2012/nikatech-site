@@ -82,6 +82,8 @@ export default function HeaderFooter({ children }: { children: ReactNode }) {
                     <FooterLink href="/contact">お問い合わせ</FooterLink>
                     <FooterLink href="/announcement">お知らせ</FooterLink>
                     <FooterLink href="/forclerk">売り子の方へ</FooterLink>
+                    <FooterLink href="/tokutei">特定商取引法に基づく表記</FooterLink>
+
                 </div>
 
                 <div className="flex flex-col gap-1">
