@@ -84,8 +84,13 @@ export default function Home() {
           <h3 className="font-bold">簡易説明書</h3>
 
           <Link className="link" href={"/assets/gba_bootcable_v1.pdf"} target="_blank">
-            簡易説明書（第1版）PDFはこちら
+            簡易説明書（第1版 技術書典20にて頒布）PDFはこちら
           </Link>
+
+          <Link className="link" href={"/assets/gba_bootcable_v2.pdf"} target="_blank">
+            簡易説明書（第2版 BOOTHにて販売）PDFはこちら
+          </Link>
+
 
           {/* <h3 className="font-bold">正誤情報</h3>
           現在、判明している正誤情報はありません。 */}
