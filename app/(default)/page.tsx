@@ -34,6 +34,21 @@ export default function Home() {
           </p>
         </Section>
 
+        <Section title={"買い方"} id="circle">
+          <p>
+            物理本＋ダウンロード版のセットは<Link className="link" href="https://nikatech.booth.pm/" target="_blank">BOOTH</Link>にて販売しています！（一部物理本の用意がないものもあります）<br />
+            ダウンロード版は<Link href={"https://techbookfest.org/organization/KdLZ1mQYzBTzyyz68x2UX"} target="_blank">技術書典オンラインマーケット</Link>でも販売しています！
+          </p>
+
+          <p>
+            技術書典にnikatechが参加している場合は、技術書典オンラインマーケットからも物理本が購入できる場合があります。
+          </p>
+
+          <p>
+            For international customers: You can purchase physical books from nikatech on <Link className="link" href="https://nikatech.booth.pm/" target="_blank">BOOTH</Link> via Buyee! (Please contact us if it is unavailable)
+          </p>
+        </Section>
+
 
         <section id="announcement">
           <h2 className="font-bold text-2xl border-b border-neutral-300 pb-1 mb-2">お知らせ</h2>
