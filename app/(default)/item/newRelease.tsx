@@ -3,6 +3,7 @@ import newRelease from "./new_release.png";
 import Link from "next/link";
 
 import gba_lowlevel_thumb from "./gba_lowlevel/thumb.png"
+import gba_lowlevel_eng_thumb from "./gba_lowlevel_eng/thumb.png"
 import doujin_pos_cashless_thumb from "./doujin_pos_cashless/thumb.png"
 import gba_bootcable_thumb from "./gba_bootcable/thumb.jpg"
 
@@ -32,13 +33,20 @@ function NewReleaseItem(props: { name: string, price: number, thumb: string | St
 export function NewReleaseList() {
     return <>
         {/* grid-rows-1の部分は新刊の個数に合わせて変更する */}
-        <div className="w-full grid grid-rows-2 grid-cols-1 lg:grid-rows-1 lg:grid-cols-4 gap-x-6 gap-y-2">
+        <div className="w-full grid grid-rows-4 grid-cols-1 lg:grid-rows-1 lg:grid-cols-4 gap-x-6 gap-y-2">
             <NewReleaseItem
                 name={"GBAで学ぶ低レイヤー"}
                 price={1000}
                 thumb={gba_lowlevel_thumb}
                 detailPageRef={"item/gba_lowlevel"}
                 detail={"JIS B5 / 82p / フルカラー"}
+            />
+            <NewReleaseItem
+                name={"Learning Low-Level Programming with the GBA"}
+                price={1000}
+                thumb={gba_lowlevel_eng_thumb}
+                detailPageRef={"item/gba_lowlevel_eng"}
+                detail={"JIS B5 / 82p / Full color"}
             />
             <NewReleaseItem
                 name={"スマート頒布 〜同人誌即売会に自作POSとキャッシュレス決済を入れてみた〜"}
